@@ -1,0 +1,175 @@
+<resources>
+
+    <string name="main_init_ble">
+        The authorization for all permissions has been confirmed\n
+        Click "Initialize" and search for the matching Bluetooth.</string>
+    <string name="main_search_ble">Search for Bluetooth matching results</string>
+    <string name="main_set_ble">Bluetooth Setting</string>
+    <string name="main_send_ble_test_data">Send Ble test data</string>
+    <string name="main_start_navigation">Start Navigation</string>
+    <string name="ble_connected">connected</string>
+    <string name="ble_disconnect">disconnect</string>
+
+    <string name="ble_set_sn">SN Code</string>
+    <string name="ble_set_version">Device Version</string>
+    <string name="ble_set_brightness">Brightness</string>
+    <string name="ble_set_sound">Sound</string>
+    <string name="ble_set_device_sound">Device Sound</string>
+    <string name="ble_set_gps_speed">GPS Speed Ratio Value</string>
+
+    //T800Test-title
+    <string name="t800_test_title_mq">Queue test</string>
+    <string name="t800_test_title_time">Time(0x01)：</string>
+    <string name="t800_test_title_speed">Speed(0x02):</string>
+    <string name="t800_test_title_speed_body">
+        The empty icon in interface 0x04 must be sent first for it to take effect.\n
+        The empty icon in interface 0x04 must be sent first for it to take effect.\n
+        The empty icon in interface 0x04 must be sent first for it to take effect.\n
+        The following two values can be sent or not sent.\n
+        The input described in the document as 0 or 1, in fact, is a numerical value.\n
+        LimitedSpeed1-Warning Point-1，LimitedSpeed-Warning Point-2\n
+        When there is only a large warning bar, it reads the first one.</string>
+    <string name="t800_test_title_intercalspeed">Intercal Speed(0x03)：</string>
+    <string name="t800_test_title_intercalspeed_body">
+        Not a single value can be omitted. All must be passed. \n
+        If any is missing, the previous value will be displayed.</string>
+    <string name="t800_test_title_speeding">Speeding(0x1B)：</string>
+    <string name="t800_test_title_speeding_body">After checking several times, there was no response at all ？？？？？？</string>
+    <string name="t800_test_title_warning_point">Warning Point(0x04)(0x0E)：</string>
+    <string name="t800_test_title_warning_point_body">
+        0x04：Small icon interface, allowing for the setting of up to 2 at a time\n
+        0x0E：Large icon interface, one per time\n
+        No problem. Just a lot of blank icons\n
+        The values inside need to be sent over the speed interface 0x02 and the numbers should be limited
+    </string>
+    <string name="t800_test_title_reach">Reach(0x05)：</string>
+    <string name="t800_test_title_reach_body">
+        Just sending the distance will automatically display a fake timestamp\n
+        All data must be sent. Additionally, the "type" field is not used and sending or not sending it is the same.</string>
+    <string name="t800_test_title_lane">Lane Information(0x06)：</string>
+    <string name="t800_test_title_lane_body">
+        Many issues must be called through three interfaces.\n
+        Setting the automatic length will display data that seems to have originated from nowhere, with a large amount of cached data causing the display to be disordered.\n
+        1：Type 00: Do not need to be sent.\n
+        2：Type 01: By default, the last digit is not required to be pronounced. Even if it is pronounced, it will not be accepted.\n
+        3：Type 02: One more person should be added. By default, it should be set as 00. Then the layout of the lines will be correct, otherwise there will be conflicts.\n
+    </string>
+    <string name="t800_test_title_high_lane">Highway lane information(0x06)：</string>
+    <string name="t800_test_title_trun">Turning information(0x07)：</string>
+    <string name="t800_test_title_trun_body">In the first turn information, namely the name of the road, the name of the next road should be set(0x08)</string>
+    <string name="t800_test_title_road">Road information：(0x08)(0x14)</string>
+    <string name="t800_test_title_road_body">
+        0x08: To set the next road, it is also necessary to set the turning information.0x07\n
+        0x14：No problem. After the setting is completed, the lane information will be replaced.
+    </string>
+    <string name="t800_test_title_gps">GPS(0x09)(0x0D)(0xFD)：</string>
+    <string name="t800_test_title_gps_body">0x09:The display of normal 1 and lost instruction 2 is exactly the same.？？？？？</string>
+    <string name="t800_test_title_brightness">Brightness：(0x0A)(0xFA)(0x18)</string>
+    <string name="t800_test_title_brightness_body">
+        0x0A：Not sure if it is effective\n
+        0xFA：There is a return value that is always 0\n
+        0x18：Set the lighting to normal
+    </string>
+    <string name="t800_test_title_sound">Sound：(0xa1)(0xa2)(0x16)(0x17)</string>
+    <string name="t800_test_title_set">Setting:(0xfb)(0x0C)(0xfc)(0x15)</string>
+    <string name="t800_test_title_set_body">
+        0xfb:Querying the serial number instruction. \n
+        The conversion format of the provided DEMO code is incorrect.\n
+        Just use the system is conversion format directly. \n
+        It is not ruled out that the provided DEMO is an expired and fake document.\n
+        String sn= new String(data, StandardCharsets.UTF_8)\n
+        0x0C：Write/Setup Serial Number Instruction, followed by 10 bytes\n
+        0xfc：Query the software version. It is impossible to test whether the 6 bytes in the document are correct. After the program is modified, the automatic length can be set. The parsing is also the standard parsing, not the one in the DEMO. The code is written here. It is estimated that someone has changed the person or it has been found that the standard parsing is the most convenient. The style has been changed, and character length is no longer added.\n
+        0x15:Factory Reset
+    </string>
+    <string name="t800_test_title_send_image">Send Image:(0x10)(0x11) </string>
+    <string name="t800_test_title_send_image_body">
+        0x10:Start by sending the start command, and end by sending the end command\n
+        0x11：Visible and invisible real scene images\n
+        The document is fake. The reply is not received\n
+        There is no need to wait. Just make sure the order is correct. It is basically a standard Bluetooth file transfer
+    </string>
+    <string name="t800_test_title_statu">Statu Information：(0x12)(0x13)</string>
+    <string name="t800_test_title_statu_body">
+        0x12:Display the yellow status bar\n
+        0x13:Flashing turn indicator icon
+    </string>
+
+    //T800Test-item
+    <string name="t800_test_item_mq_100">100 test instructions</string>
+    <string name="t800_test_item_time">test time</string>
+    <string name="t800_test_item_speed_1">only send speed</string>
+    <string name="t800_test_item_speed_2">send all</string>
+    <string name="t800_test_item_speed_3">only send speed NO_DESTINATION</string>
+    <string name="t800_test_item_speeding">Set speed overrun display - random value</string>
+    <string name="t800_test_item_intervalspeed">Speed limit within the section</string>
+    <string name="t800_test_item_hide_intervalspeed">Hide intervalspeed</string>
+    <string name="t800_test_item_wp_speed">WarningPoint Speed</string>
+    <string name="t800_test_item_warning_point_1">Single random</string>
+    <string name="t800_test_item_warning_point_2">Two random ones</string>
+    <string name="t800_test_item_big_warning_point">Large size - Looping</string>
+    <string name="t800_test_item_warning_point_1_t">warning point 1 title</string>
+    <string name="t800_test_item_warning_point_1_b">warning point 1 body</string>
+    <string name="t800_test_item_warning_point_2_t">warning point 2 title</string>
+    <string name="t800_test_item_warning_point_2_b">warning point 2 body</string>
+    <string name="t800_test_item_reachinfo_1">Send random time type</string>
+    <string name="t800_test_item_reachinfo_2">Send reachinfo string</string>
+    <string name="t800_test_item_laneinformation_hide">Hidden driveway</string>
+    <string name="t800_test_item_laneinformation_0">selective-access display</string>
+    <string name="t800_test_item_laneinformation_1">1-10</string>
+    <string name="t800_test_item_laneinformation_2">11-20</string>
+    <string name="t800_test_item_laneinformation_3">21-30</string>
+    <string name="t800_test_item_laneinformation_4">31-40</string>
+    <string name="t800_test_item_laneinformation_5">41-50</string>
+    <string name="t800_test_item_laneinformation_6">51-60</string>
+    <string name="t800_test_item_laneinformation_7">61-70</string>
+    <string name="t800_test_item_laneinformation_8">71-80</string>
+    <string name="t800_test_item_laneinformation_hi_pass_auto_l">Set automatic length</string>
+    <string name="t800_test_item_laneinformation_hi_pass_1">selective-access display</string>
+    <string name="t800_test_item_laneinformation_hi_pass_2">Display 30 lanes</string>
+    <string name="t800_test_item_trun_type_1">Single random</string>
+    <string name="t800_test_item_trun_type_2">Two random ones</string>
+    <string name="t800_test_item_trun_type_3">Loop display</string>
+    <string name="t800_test_item_next_road_name">Next lane: Test road name + random number</string>
+    <string name="t800_test_item_now_road_hide">Current Lane: Hide Name</string>
+    <string name="t800_test_item_now_road_name_1">Current Lane: Destination Name</string>
+    <string name="t800_test_item_now_road_name_2">Current Lane: Location Name</string>
+    <string name="t800_test_item_now_road_name_3">Current Lane: Location Name  Current Lane: Road Name</string>
+    <string name="t800_test_item_now_road_name_4">prompt message</string>
+    <string name="t800_test_item_gps_1">close</string>
+    <string name="t800_test_item_gps_2">open</string>
+    <string name="t800_test_item_gps_3">lose</string>
+    <string name="t800_test_item_gps_speed_set">Set random values for the GPS speed ratio:0-10</string>
+    <string name="t800_test_item_gps_speed_que">Query the GPS speed ratio value</string>
+    <string name="t800_test_item_brightness_1">Set_Brightness_Auto</string>
+    <string name="t800_test_item_brightness_2">Set_Brightness_to 1-10 randomly manually</string>
+    <string name="t800_test_item_brightness_que">Query brightness</string>
+    <string name="t800_test_item_brightness_daylight_statu_open">Sunlight collection has been activated</string>
+    <string name="t800_test_item_brightness_daylight_statu_close">Sunlight collection is turned off</string>
+    <string name="t800_test_item_sn_que">Query SN</string>
+    <string name="t800_test_item_sn_write">Rewrite SN: T700+ Random 6-digit alphanumeric characters</string>
+    <string name="t800_test_item_que_device_version">Query the device version information</string>
+    <string name="t800_test_item_factory_set">Restore factory settings</string>
+    <string name="t800_test_item_sound_set">Set random sound from 0 to 10</string>
+    <string name="t800_test_item_sound_que">Query the volume level of the sound</string>
+    <string name="t800_test_item_device_sound_open">Startup alert sound: ON</string>
+    <string name="t800_test_item_device_sound_close">Startup alert sound: OFF</string>
+    <string name="t800_test_item_device_sound_que">Query startup alert tone</string>
+    <string name="t800_test_item_image_send_1">Send Image-8kb</string>
+    <string name="t800_test_item_image_send_2">Send Image-32kb</string>
+    <string name="t800_test_item_image_send_3">Send Image-1.2MB</string>
+    <string name="t800_test_item_image_send_4">Send Image-2.4MB-Landscape</string>
+    <string name="t800_test_item_image_send_5">Send Image-progress bar</string>
+    <string name="t800_test_item_image_show">Show Image</string>
+    <string name="t800_test_item_image_hide">Hide Image</string>
+    <string name="t800_test_item_bar_hide">Hide Bar</string>
+    <string name="t800_test_item_show_yellow_statu">Display the yellow status bar</string>
+    <string name="t800_test_item_hide_yellow_statu">Hide the yellow status bar</string>
+    <string name="t800_test_item_yellow_statu_str">yellow status str</string>
+    <string name="t800_test_item_icon_flicker_open">The icon is flashing on</string>
+    <string name="t800_test_item_icon_flicker_close">The icon is flashing off</string>
+    <string name="t800_test_item_set_speeding_bj" >设置超速背景-循环</string>
+    <string name="t800_test_item_set_trun_bj" >设置转向背景-循环</string>
+    <string name="t800_test_item_set_yellow_statu_bj" >设置黄色状态栏背景-循环</string>
+
+</resources>

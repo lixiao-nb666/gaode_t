@@ -1,0 +1,166 @@
+<resources>
+
+    <string name="main_init_ble">모든 권한이 있는지 확인하려면 초기화를 클릭하고 블루투스로 검색하십시오</string>
+    <string name="main_search_ble">블루투스로 일치하는 검색</string>
+    <string name="main_set_ble">블루투스 설정</string>
+    <string name="main_send_ble_test_data">테스트 데이터 보내기</string>
+    <string name="main_start_navigation">내비게이션을 시작하다</string>
+    <string name="ble_connected">연결 성공</string>
+    <string name="ble_disconnect">연결 해제</string>
+
+    <string name="ble_set_sn">SN 야드</string>
+    <string name="ble_set_version">버전 정보</string>
+    <string name="ble_set_brightness">광도</string>
+    <string name="ble_set_sound">소리</string>
+    <string name="ble_set_device_sound">신호음</string>
+    <string name="ble_set_gps_speed">GPS속도 비율</string>
+
+    //T800Test-title
+    <string name="t800_test_title_mq">큐 테스트</string>
+    <string name="t800_test_title_time">시간(0x01)：</string>
+    <string name="t800_test_title_speed">속도(0x02):</string>
+    <string name="t800_test_title_speed_body">
+        0x04포트 안에 비어 있는 아이콘을 먼저 보내야 합니다\n
+        0x04포트 안에 비어 있는 아이콘을 먼저 보내야 합니다\n
+        0x04포트 안에 비어 있는 아이콘을 먼저 보내야 합니다\n
+        나머지 2개는 내보내도 되고 내보내지 않아도 된다\n
+        슈퍼 구덩이 문서에서는 0이나 1을 입력하지만 실제로는 숫자를 입력한다\n
+        LimitedSpeed1-첫번째 경고란입니다，LimitedSpeed-경고란 2번\n
+        큰 알람 표시줄만 있으면 먼저 읽습니다</string>
+    <string name="t800_test_title_intercalspeed">구간 속도 측정(0x03)：</string>
+    <string name="t800_test_title_intercalspeed_body">한 값도 적어서는 안됩니다. 모두 전송해야 합니다. 하나가 부족하면 마지막 값이 표시됩니다</string>
+    <string name="t800_test_title_speeding">과속 측정(0x1B)：</string>
+    <string name="t800_test_title_speeding_body">몇 번을 대답했지만 전혀 반응이 없다？？？？？？</string>
+    <string name="t800_test_title_warning_point">경고 아이콘 테스트(0x04)(0x0E)：</string>
+    <string name="t800_test_title_warning_point_body">
+        0x04：작은 아이콘 포트, 한 번에 2개까지 설정 가능\n
+        0x0E：한 번에 하나씩 큰 아이콘 인터페이스\n
+        아무 문제 없어요, 빈 아이콘, 숫자, 숫자 제한 0x02 속도 인터페이스
+    </string>
+    <string name="t800_test_title_reach">도착 정보(0x05)：</string>
+    <string name="t800_test_title_reach_body">거리만 전송하면 자동으로 가짜 타임스탬프가 나타나게 되며 모두 전송해야 한다. type 필드가 없기 때문에 모양 전송을 할 수 없다</string>
+    <string name="t800_test_title_lane">도로 정보(0x06)：</string>
+    <string name="t800_test_title_lane_body">
+        3개의 인터페이스로 호출해야 하는 많은 문제들이 있다\n
+        자동길이를 설정하면 어디서 왔는지 모르는 데터가 나타나거나 대량의 캐시를 둔 데터가 어지럽게 나타나는가\n
+        1：type 00 이후 인자는 보낼 필요가 없습니다\n
+        2：유형이 01, 기본값일 때, 마지막은 보내지 않습니다, 보내도 수락하지 않습니다\n
+        3:타입을 02로 설정하면, 한 자리를 남겨 둡니다. 기본값은 00 이고, 그 다음에 줄의 레이아웃이 일치합니다\n
+    </string>
+    <string name="t800_test_title_high_lane">고속도로 정보(0x06)：</string>
+    <string name="t800_test_title_trun">방향전환 정보(0x07)：</string>
+    <string name="t800_test_title_trun_body">첫번째 방향 정보 안쪽인 도로 이름을 입력하면 다음 길 이름을 설정해야 한다0x08</string>
+    <string name="t800_test_title_road">도로 정보：(0x08)(0x14)</string>
+    <string name="t800_test_title_road_body">
+        0x08:다음 차로를 만들고 스티어링 정보도 설치해야 한다0x07\n
+        0x14：뭐, 차선정보를 대체하려면 어떻게 해야 하나요
+    </string>
+    <string name="t800_test_title_gps">GPS(0x09)(0x0D)(0xFD)：</string>
+    <string name="t800_test_title_gps_body">0x09:정상 1과 손실된 명령 2 는 똑같이 표시됩니다？？？？？</string>
+    <string name="t800_test_title_brightness">밝기 정보：(0x0A)(0xFA)(0x18)</string>
+    <string name="t800_test_title_brightness_body">0x0A：설정이 유효한지 알 수 없습니다\n
+        0xFA：항상 같은 값을 반환합니다0\n
+        0x18：설정된 채광이 항상 유지되는 값을 반환합니다
+    </string>
+    <string name="t800_test_title_sound">음성 정보：(0xa1)(0xa2)(0x16)(0x17)</string>
+    <string name="t800_test_title_set">설정 정보:(0xfb)(0x0C)(0xfc)(0x15)</string>
+    <string name="t800_test_title_set_body">
+        0xfb:일련번호 명령어를 검색하면 데모의 코드를 잘못 포맷으로 변환하면 시스템에서 직접 포맷을 변환하면 된다. 데모가 기한이 지난 가짜 문서일 가능성을 배제하지 않는다\n
+        String sn= new String(data, StandardCharsets.UTF_8)\n
+        0x0C：일련 번호 쓰기/설정 명령어, 마지막으로 10 바이트\n
+        0xfc：소프트웨어 버전 조회, 문서중의 6 바이트 수가 맞는가를 테스트할 방법이 없다. 프로그램이 자동 길이로 변경되면 된다.\n
+        파서도 표준 파서, 데모 안에서가 아니다. 코드는 여기에 쓰고 아마 사람을 바꾸거나 발견 표준 파서가 가장 편리할 것이다. \n
+        이미 스타일이 바뀌었고 문자길이 모두 더해지지 않았다\n
+        0x15:출고 설정 복원
+    </string>
+    <string name="t800_test_title_send_image">그림 보내기:(0x10)(0x11)</string>
+    <string name="t800_test_title_send_image_body">
+        0x10:처음에는 시작 명령을 보내고, 끝은 끝을 보낸다\n
+        0x11：가시적 실경도\n
+        문서 전부 가짜, 회신, 기다릴 필요 없다, 순서가 틀릴 수 없습니다, 사실 바로 표준 블루투스 파일 전송입니다
+    </string>
+    <string name="t800_test_title_statu">상태 정보：(0x12)(0x13)</string>
+    <string name="t800_test_title_statu_body">
+        0x12:노란색 상태 표시줄 보이기\n
+        0x13:깜빡이는 방향 바꾸기 아이콘
+    </string>
+
+
+    //T800Test-item
+    <string name="t800_test_item_mq_100">100개의 테스트 명령어</string>
+    <string name="t800_test_item_time">시험 시간</string>
+    <string name="t800_test_item_speed_1">전송만 속도</string>
+    <string name="t800_test_item_speed_2">모두 보내기 속도</string>
+    <string name="t800_test_item_speed_3">only send speed NO_DESTINATION</string>
+    <string name="t800_test_item_speeding">속도 제한 표시-무작위 값을 설정합니다</string>
+    <string name="t800_test_item_intervalspeed">구간 제한 속도</string>
+    <string name="t800_test_item_hide_intervalspeed">Hide intervalspeed</string>
+    <string name="t800_test_item_wp_speed">WarningPoint Speed</string>
+    <string name="t800_test_item_warning_point_1">단일 무작위</string>
+    <string name="t800_test_item_warning_point_2">무작위 2개</string>
+    <string name="t800_test_item_big_warning_point">대형 사이클</string>
+    <string name="t800_test_item_warning_point_1_t">warning point 1 title</string>
+    <string name="t800_test_item_warning_point_1_b">warning point 1 body</string>
+    <string name="t800_test_item_warning_point_2_t">warning point 2 title</string>
+    <string name="t800_test_item_warning_point_2_b">warning point 2 body</string>
+    <string name="t800_test_item_reachinfo_1">임의의 시간 형식 보내기</string>
+    <string name="t800_test_item_reachinfo_2">시간 형식을 보내지 않습니다</string>
+    <string name="t800_test_item_laneinformation_hide">차도 숨기기</string>
+    <string name="t800_test_item_laneinformation_0">무작위로 보이기</string>
+    <string name="t800_test_item_laneinformation_1">1-10</string>
+    <string name="t800_test_item_laneinformation_2">11-20</string>
+    <string name="t800_test_item_laneinformation_3">21-30</string>
+    <string name="t800_test_item_laneinformation_4">31-40</string>
+    <string name="t800_test_item_laneinformation_5">41-50</string>
+    <string name="t800_test_item_laneinformation_6">51-60</string>
+    <string name="t800_test_item_laneinformation_7">61-70</string>
+    <string name="t800_test_item_laneinformation_8">71-80</string>
+    <string name="t800_test_item_laneinformation_hi_pass_auto_l">자동 길이 설정</string>
+    <string name="t800_test_item_laneinformation_hi_pass_1">무작위로 보이기</string>
+    <string name="t800_test_item_laneinformation_hi_pass_2">30차선 보이기</string>
+    <string name="t800_test_item_trun_type_1">단일 무작위</string>
+    <string name="t800_test_item_trun_type_2">무작위 2개</string>
+    <string name="t800_test_item_trun_type_3">반복 표시</string>
+    <string name="t800_test_item_next_road_name">다음 차선:도로명 + 난수 테스트</string>
+    <string name="t800_test_item_now_road_hide">현재 주행 경로:이름을 숨깁니다</string>
+    <string name="t800_test_item_now_road_name_1">현재 이동 경로:목적지 이름</string>
+    <string name="t800_test_item_now_road_name_2">현재 주행 경로:위치 이름</string>
+    <string name="t800_test_item_now_road_name_3">현재 이동 경로:도로 이름</string>
+    <string name="t800_test_item_now_road_name_4">prompt message</string>
+    <string name="t800_test_item_gps_1">닫다</string>
+    <string name="t800_test_item_gps_2">열림</string>
+    <string name="t800_test_item_gps_3">분실</string>
+    <string name="t800_test_item_gps_speed_set">gps 속도 값의 무작위 비율을 0에서 10으로 설정합니다</string>
+    <string name="t800_test_item_gps_speed_que">비율의 gps 속도를 알아봅니다</string>
+
+    <string name="t800_test_item_brightness_1">_ 밝기 _ 자동 설정</string>
+    <string name="t800_test_item_brightness_2">_ 밝기 _ 수동 1-10 랜덤 설정</string>
+    <string name="t800_test_item_brightness_que">검색 밝기</string>
+    <string name="t800_test_item_brightness_daylight_statu_open">햇빛 수집 켜기</string>
+    <string name="t800_test_item_brightness_daylight_statu_close">햇빛 수집 끄기</string>
+    <string name="t800_test_item_sn_que">sn 검색</string>
+    <string name="t800_test_item_sn_write">sn:t700 + 임의의 6자리 영문자 다시 쓰기</string>
+    <string name="t800_test_item_que_device_version">장치 버전 정보를 찾다</string>
+    <string name="t800_test_item_factory_set">공장 설정 복원</string>
+    <string name="t800_test_item_sound_set">무작위 사운드 0-10 설정</string>
+    <string name="t800_test_item_sound_que">소리 크기 검색</string>
+    <string name="t800_test_item_device_sound_open">시작 신호음:켜기</string>
+    <string name="t800_test_item_device_sound_close">시작 신호음:꺼짐</string>
+    <string name="t800_test_item_device_sound_que">시작 알림 소리 검색</string>
+    <string name="t800_test_item_image_send_1">그림 보내기-8kb</string>
+    <string name="t800_test_item_image_send_2">그림 보내기-32kb</string>
+    <string name="t800_test_item_image_send_3">그림 보내기-1.2MB</string>
+    <string name="t800_test_item_image_send_4">그림 보내기-2.4MB-칸막이</string>
+    <string name="t800_test_item_image_send_5">Send Image-progress bar</string>
+    <string name="t800_test_item_image_show">실경도를 나타내다</string>
+    <string name="t800_test_item_image_hide">실경도를 숨기다</string>
+    <string name="t800_test_item_bar_hide">Hide Bar</string>
+    <string name="t800_test_item_show_yellow_statu">노란색 상태 표시줄 보이기</string>
+    <string name="t800_test_item_hide_yellow_statu">노란색 상태 표시줄 숨기기</string>
+    <string name="t800_test_item_yellow_statu_str">yellow status str</string>
+    <string name="t800_test_item_icon_flicker_open">아이콘 깜박임</string>
+    <string name="t800_test_item_icon_flicker_close">아이콘 깜빡임 끄기</string>
+    <string name="t800_test_item_set_speeding_bj" >设置超速背景-循环</string>
+    <string name="t800_test_item_set_trun_bj" >设置转向背景-循环</string>
+    <string name="t800_test_item_set_yellow_statu_bj" >设置黄色状态栏背景-循环</string>
+</resources>

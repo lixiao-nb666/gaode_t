@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/blue">
+
+    <com.amap.api.maps.TextureMapView
+        android:id="@+id/navi_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <com.nrmyw.gaode_t.view.HudTrafficProgressBar
+            android:id="@+id/tpb"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="22px"
+            android:layout_gravity="right"
+            android:layout_height="260px"/>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

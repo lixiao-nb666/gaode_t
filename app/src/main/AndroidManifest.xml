@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <!-- 蓝牙权限新增 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- 蓝牙权限新增 If your app targets Android 9 or lower, you can declare
+         ACCESS_COARSE_LOCATION instead. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+
+
+
+<application
+        android:name=".app.MyApp"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:allowNativeHeapPointerTagging="true"
+        android:hardwareAccelerated="true"
+        android:supportsRtl="true"
+        android:testOnly="false"
+        android:persistent="true"
+        android:theme="@style/NewBee.BaseImmersiveTheme">
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="${GD_KEY}" />
+
+        <service android:name="com.amap.api.location.APSService" />
+
+
+    <activity
+        android:name=".activity.WelcomeActivity"
+        android:label="@string/app_name"
+        android:exported="true"
+        android:launchMode="singleTop"
+        android:screenOrientation="portrait">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+
+    <activity
+        android:name=".activity.t800.T800BleDataTestActivity"
+
+        android:exported="true"
+        android:launchMode="singleTop"
+        android:screenOrientation="portrait">
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+    </activity>
+
+    <activity
+        android:name=".activity.ble.BleSetActivity"
+
+        android:exported="true"
+        android:launchMode="singleInstance"
+        android:screenOrientation="portrait">
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+    </activity>
+
+    <activity
+        android:name=".activity.WhiteActivity"
+        android:exported="true"
+        android:launchMode="singleInstance"
+        android:screenOrientation="portrait">
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+    </activity>
+
+
+    <activity
+            android:name="com.gaode.demo.activity.IndexActivity"
+            android:label="IndexActivity"
+            android:exported="true"
+            android:launchMode="standard"
+            android:screenOrientation="portrait">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+
+
+
+
+        <activity
+            android:name="com.amap.api.navi.AmapRouteActivity"
+            android:launchMode="singleInstance"
+            android:exported="true"
+            android:theme="@style/NotTitleAppTheme"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+
+
+    <activity
+        android:name=".activity.MyGaoDeActivity"
+        android:launchMode="singleInstance"
+        android:exported="true"
+        android:theme="@style/NotTitleAppTheme"
+        android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+
+
+        <activity
+            android:name="com.gaode.demo.activity.BasicNaviActivity"
+            android:exported="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.CustomZoomInIntersectionViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.CustomRouteActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
+        <activity
+            android:name="com.gaode.demo.activity.CustomDriveWayViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.HudDisplayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.IntelligentBroadcastActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.RoutePlanningActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.gaode.demo.activity.GPSNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.CustomTrafficProgressBarActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.SimpleNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.GetNaviStepsAndLinksActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.NorthModeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            />
+        <activity
+            android:name="com.gaode.demo.activity.OverviewModeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.BasicWalkNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.UseExtraGpsDataActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.CustomCarActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.CustomRouteTextureInAMapNaviViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.CustomDirectionViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.CustomTrafficButtonViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.CustomNextTurnTipViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.CustomZoomButtonViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.CustomOverviewButtonViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.RestRouteShowActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.RouteNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.SingleRouteCalculateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.WalkRouteCalculateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.RideRouteCalculateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.MotorcycleRouteCalculateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.EleBikeRouteCalculateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.EmulatorActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.custom.CustomUiActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.gaode.demo.activity.DriverListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.gaode.demo.activity.TruckRouteCalculateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+
+        <activity
+            android:name="com.gaode.demo.activity.SetTruckParamsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+
+        <activity
+            android:name="com.gaode.demo.activity.SwitchMasterRoadNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+
+        <activity
+            android:name="com.gaode.demo.activity.IflyVoiceActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+
+        <activity
+            android:name="com.gaode.demo.activity.custom.AllCustomDriveWayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:label="@string/navi_custom_route_way" />
+
+        <activity
+            android:name="com.gaode.demo.activity.custom.AllCustomTrafficBarActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:label="@string/navi_custom_traffic_bar"/>
+        <activity
+            android:name="com.gaode.demo.activity.custom.AllCustomCrossingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:label="@string/navi_custom_crossing"/>
+        <activity
+            android:name="com.gaode.demo.activity.custom.AllCustomCarRouteActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:label="@string/navi_custom_car_route" />
+        <activity
+            android:name="com.gaode.demo.activity.custom.AllCustomNextRoadInfoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:label="@string/navi_custom_road_distance_nexttip" />
+
+        <activity
+            android:name="com.gaode.demo.activity.custom.AllCustomCameraActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:label="@string/navi_custom_camera" />
+
+        <activity
+            android:name="com.gaode.demo.activity.custom.AllCustomNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:label="@string/navi_custom_navi" />
+        <activity
+            android:name="com.gaode.demo.activity.CustomAmapRouteActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/AppTheme"
+            android:label="自定义Activity导航组件" />
+
+        <activity
+            android:name="com.gaode.demo.activity.IndependentRouteCalculateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:label="独立算路" />
+        <activity android:name="com.gaode.demo.activity.search.SearchPoiActivity"
+            android:exported="true"/>
+
+
+        <activity android:name="com.gaode.demo.activity.TestActivity"
+            android:exported="true"/>
+
+        <activity android:name="com.gaode.demo.test.CustomAmapRouteActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation"
+            android:exported="true"
+            android:theme="@style/AppTheme"
+            android:label="自定义Activity导航组件"/>
+
+
+        <service android:name="com.newbee.ble_lib.service.BluetoothGattService"
+            android:exported="true"/>
+
+        <service android:name="com.nrmyw.hud_data_event_lib.service.HudEventService"
+            android:exported="true"/>
+
+<!--    <meta-data-->
+<!--        android:name="com.newbee.ble_lib.glide.MyGlideModule"-->
+<!--        android:value="GlideModule" />-->
+    </application>
+</manifest>

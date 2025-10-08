@@ -1,0 +1,167 @@
+<resources>
+
+
+    <string name="main_init_ble">确定授权全部权限了，点击初始化并搜索匹配蓝牙</string>
+    <string name="main_search_ble">搜索匹配蓝牙</string>
+    <string name="main_set_ble">蓝牙设置</string>
+    <string name="main_send_ble_test_data">发送测试数据</string>
+    <string name="main_start_navigation">开始导航</string>
+    <string name="ble_connected">连接成功</string>
+    <string name="ble_disconnect">断开连接</string>
+
+
+    <string name="ble_set_sn">SN码</string>
+    <string name="ble_set_version">版本信息</string>
+    <string name="ble_set_brightness">亮度</string>
+    <string name="ble_set_sound">声音</string>
+    <string name="ble_set_device_sound">提示音</string>
+    <string name="ble_set_gps_speed">GPS速度比例值</string>
+
+    //T800Test-title
+    <string name="t800_test_title_mq">队列测试</string>
+    <string name="t800_test_title_time">时间(0x01)：</string>
+    <string name="t800_test_title_speed">速度(0x02):</string>
+    <string name="t800_test_title_speed_body">
+        必须先发0x04号接口里面的空图标才生效\n
+        必须先发0x04号接口里面的空图标才生效\n
+        必须先发0x04号接口里面的空图标才生效\n
+        后面2个值可以发，可以不发\n
+        超级大坑文档描述的输入0或者1，实际传入的是数字\n
+        LimitedSpeed1-警告栏第一个，LimitedSpeed-警告栏第2个\n
+        当只有大号警告栏的时候，读取的是第一个</string>
+    <string name="t800_test_title_intercalspeed">区间测速(0x03)：</string>
+    <string name="t800_test_title_intercalspeed_body">一个值都不能少，必须要全部传，少一个就会显示上次的值</string>
+    <string name="t800_test_title_speeding">超速测试(0x1B)：</string>
+    <string name="t800_test_title_speeding_body">对了几遍完全没反应？？？？？？</string>
+    <string name="t800_test_title_warning_point">警示图标测试(0x04)(0x0E)：</string>
+    <string name="t800_test_title_warning_point_body">
+        0x04：小图标接口，一次可以设置2个\n
+        0x0E：大图标接口，一次1个\n
+        没什么问题，就是很多空图标，里面的值，要速度接口0x02发过来并且限制数字
+    </string>
+    <string name="t800_test_title_reach">到达信息(0x05)：</string>
+    <string name="t800_test_title_reach_body">只发送距离，会自动显示假的时间戳，必须要全部发送,另外type没用字段，发不发一个样子</string>
+    <string name="t800_test_title_lane">车道信息(0x06)：</string>
+    <string name="t800_test_title_lane_body">
+        很多问题,一定要作为3个接口去调用\n
+        设置自动长度，会显示不知道从哪里来的数据，大量缓存数据，显示会错乱\n
+        1：类型为00后面参数不用发\n
+        2：类型为01，默认的时候，最后一位不用发，发了也不接受\n
+        3:类型为02时，要多留一位，默认生成00,然后line行数布局才对，要不冲突\n
+    </string>
+    <string name="t800_test_title_high_lane">高速车道信息(0x06)：</string>
+    <string name="t800_test_title_trun">转向信息(0x07)：</string>
+    <string name="t800_test_title_trun_body">第一个转向信息里面，即道路名字，要设置下一个道路名字0x08</string>
+    <string name="t800_test_title_road">道路信息：(0x08)(0x14)</string>
+    <string name="t800_test_title_road_body">
+        0x08:设置下一个道路，还需要设置转向信息0x07\n
+        0x14：没什么问题，设置之后，取代车道信息
+    </string>
+    <string name="t800_test_title_gps">GPS信息(0x09)(0x0D)(0xFD)：</string>
+    <string name="t800_test_title_gps_body">0x09:显示正常1和丢失指令2显示一模一样？？？？？</string>
+    <string name="t800_test_title_brightness">亮度信息：(0x0A)(0xFA)(0x18)</string>
+    <string name="t800_test_title_brightness_body">
+        0x0A：设置不知道有没有生效\n
+        0xFA：有返回值永远为0\n
+        0x18：设置采光正常
+    </string>
+    <string name="t800_test_title_sound">声音信息：(0xa1)(0xa2)(0x16)(0x17)</string>
+    <string name="t800_test_title_set">设置信息:(0xfb)(0x0C)(0xfc)(0x15)</string>
+    <string name="t800_test_title_set_body">
+        0xfb:查询序列号指令，给的DEMO代码的转换格式错误，直接用系统的转换格式即可，不排除给的DEMO是过期假文档\n
+        String sn= new String(data, StandardCharsets.UTF_8)\n
+        0x0C：写入/设置序列号指令，最后是10个字节\n
+        0xfc：查询软件版本，没办法测试文档中的6个字节数是不是对的，程序改完自动长度即可，解析也是标准解析，不是DEMO里面的，代码写到这里，估计换人了或者发现标准解析才是最方便的，已经改风格了，都不加字符长度了\n
+        0x15:恢复出厂设置
+    </string>
+    <string name="t800_test_title_send_image">发送图片:(0x10)(0x11)</string>
+    <string name="t800_test_title_send_image_body">
+        0x10:开始发个开始的指令，结束发结束的\n
+        0x11：显隐实景图\n
+        文档全假的，回复回复没有，等待也不用，不要把顺序弄错就可以了,其实就是标准的蓝牙发文件
+    </string>
+    <string name="t800_test_title_statu">状态信息：(0x12)(0x13)</string>
+    <string name="t800_test_title_statu_body">
+        0x12:显示黄色状态栏\n
+        0x13:闪烁转向图标
+    </string>
+
+    //T800Test-item
+    <string name="t800_test_item_mq_100">100条测试指令</string>
+    <string name="t800_test_item_time">测试时间</string>
+    <string name="t800_test_item_speed_1">仅发送速度</string>
+    <string name="t800_test_item_speed_2">发送速度全部</string>
+    <string name="t800_test_item_speed_3">发送速度，无目的地</string>
+    <string name="t800_test_item_speeding">设置超速显示——随机值</string>
+    <string name="t800_test_item_intervalspeed">区间限速</string>
+    <string name="t800_test_item_hide_intervalspeed">隐藏区间限速</string>
+    <string name="t800_test_item_wp_speed">警示图限速</string>
+    <string name="t800_test_item_warning_point_1">单个随机</string>
+    <string name="t800_test_item_warning_point_2">2个随机</string>
+    <string name="t800_test_item_big_warning_point">大号-循环</string>
+    <string name="t800_test_item_warning_point_1_t">1号警示图标 title</string>
+    <string name="t800_test_item_warning_point_1_b">1号警示图标 body</string>
+    <string name="t800_test_item_warning_point_2_t">2号警示图标 title</string>
+    <string name="t800_test_item_warning_point_2_b">2号警示图标 body</string>
+    <string name="t800_test_item_reachinfo_1">发送随机时间类型</string>
+    <string name="t800_test_item_reachinfo_2">发送到达信息的字符串</string>
+    <string name="t800_test_item_laneinformation_hide">隐藏车道</string>
+    <string name="t800_test_item_laneinformation_0">随机显示</string>
+    <string name="t800_test_item_laneinformation_1">1-10</string>
+    <string name="t800_test_item_laneinformation_2">11-20</string>
+    <string name="t800_test_item_laneinformation_3">21-30</string>
+    <string name="t800_test_item_laneinformation_4">31-40</string>
+    <string name="t800_test_item_laneinformation_5">41-50</string>
+    <string name="t800_test_item_laneinformation_6">51-60</string>
+    <string name="t800_test_item_laneinformation_7">61-70</string>
+    <string name="t800_test_item_laneinformation_8">71-80</string>
+    <string name="t800_test_item_laneinformation_hi_pass_auto_l">设置自动长度</string>
+    <string name="t800_test_item_laneinformation_hi_pass_1">随机显示</string>
+    <string name="t800_test_item_laneinformation_hi_pass_2">显示30车道</string>
+    <string name="t800_test_item_trun_type_1">单个随机</string>
+    <string name="t800_test_item_trun_type_2">2个随机</string>
+    <string name="t800_test_item_trun_type_3">循环显示</string>
+    <string name="t800_test_item_next_road_name">下一个车道：测试道路名称+随机数字</string>
+    <string name="t800_test_item_now_road_hide">当前车道：隐藏名字</string>
+    <string name="t800_test_item_now_road_name_1">当前车道：目的地名字"</string>
+    <string name="t800_test_item_now_road_name_2">当前车道：位置名字</string>
+    <string name="t800_test_item_now_road_name_3">当前车道：路名</string>
+    <string name="t800_test_item_now_road_name_4">提示信息</string>
+    <string name="t800_test_item_gps_1">关闭</string>
+    <string name="t800_test_item_gps_2">开启</string>
+    <string name="t800_test_item_gps_3">丢失</string>
+    <string name="t800_test_item_gps_speed_set">设置GPS速度比例随机值0-10</string>
+    <string name="t800_test_item_gps_speed_que">查询GPS速度比例值</string>
+
+    <string name="t800_test_item_brightness_1">设置_亮度_自动</string>
+    <string name="t800_test_item_brightness_2">设置_亮度_手动1-10随机</string>
+    <string name="t800_test_item_brightness_que">查询亮度</string>
+    <string name="t800_test_item_brightness_daylight_statu_open">日光采集开启</string>
+    <string name="t800_test_item_brightness_daylight_statu_close">日光采集关闭</string>
+    <string name="t800_test_item_sn_que">查询SN</string>
+    <string name="t800_test_item_sn_write">重写SN：T700+随机6位的字母数字</string>
+    <string name="t800_test_item_que_device_version">查询设备版本信息</string>
+    <string name="t800_test_item_factory_set">恢复工厂设置</string>
+    <string name="t800_test_item_sound_set">设置随机声音0-10</string>
+    <string name="t800_test_item_sound_que">查询声音大小</string>
+    <string name="t800_test_item_device_sound_open">启动提示音:开启</string>
+    <string name="t800_test_item_device_sound_close">启动提示音:关闭</string>
+    <string name="t800_test_item_device_sound_que">查询启动提示音</string>
+    <string name="t800_test_item_image_send_1">发送图片-8kb</string>
+    <string name="t800_test_item_image_send_2">发送图片-32kb</string>
+    <string name="t800_test_item_image_send_3">发送图片-1.2MB</string>
+    <string name="t800_test_item_image_send_4">发送图片-2.4MB-横屏</string>
+    <string name="t800_test_item_image_send_5">发送图片-进度条</string>
+    <string name="t800_test_item_image_show">显示实景图</string>
+    <string name="t800_test_item_image_hide">隐藏实景图</string>
+    <string name="t800_test_item_bar_hide">隐藏进度条</string>
+    <string name="t800_test_item_show_yellow_statu">显示黄色状态栏</string>
+    <string name="t800_test_item_hide_yellow_statu">隐藏黄色状态栏</string>
+    <string name="t800_test_item_yellow_statu_str">黄色状态栏文本</string>
+    <string name="t800_test_item_icon_flicker_open">图标闪烁开</string>
+    <string name="t800_test_item_icon_flicker_close">图标闪烁关</string>
+    <string name="t800_test_item_set_speeding_bj" >设置超速背景-循环</string>
+    <string name="t800_test_item_set_trun_bj" >设置转向背景-循环</string>
+    <string name="t800_test_item_set_yellow_statu_bj" >设置黄色状态栏背景-循环</string>
+
+</resources>
