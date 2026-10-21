@@ -1,0 +1,113 @@
+<resources>
+
+
+    <string name="not_speak_for_a_while">有一会没说话 !</string>
+    <string name="not_speak_after_start">开始之后没说话 !</string>
+    <string name="asr_stop">asr_停止</string>
+    <string name="asr_reconnecting">连接中...</string>
+    <string name="bluetooth_audio_connected">蓝牙音频设备连接成功 !</string>
+    <string name="bluetooth_audio_disconnected">蓝牙音频设备断开链接 !</string>
+
+
+
+    //中文
+    <string name="yd_lang_zh">中文-简体</string>
+    <string name="yd_lang_zh_twn">中文-台湾普通话</string>
+    <string name="yd_lang_enzh">中文-中英混合</string>
+    //英文
+    <string name="yd_lang_en">英文-通用</string>
+    <string name="yd_lang_en_aus">英语-澳大利亚</string>
+    <string name="yd_lang_en_ca">英语-加拿大</string>
+    <string name="yd_lang_en_gh">英语-加纳</string>
+    <string name="yd_lang_en_gbr">英语-英国</string>
+    <string name="yd_lang_en_ind">英语-印度</string>
+    <string name="yd_lang_en_ie">英语-爱尔兰</string>
+    <string name="yd_lang_en_ke">英语-肯尼亚</string>
+    <string name="yd_lang_en_nz">英语-新西兰</string>
+    <string name="yd_lang_en_ng">英语-尼日利亚</string>
+    <string name="yd_lang_en_ph">英语-菲律宾</string>
+    <string name="yd_lang_en_sg">英语-新加坡</string>
+    <string name="yd_lang_en_zaf">英语-南非</string>
+    <string name="yd_lang_en_tz">英语-坦桑尼亚</string>
+    <string name="yd_lang_en_us">英语-美国</string>
+
+    <string name="yd_lang_ar_il">阿拉伯语-以色列</string>
+    <string name="yd_lang_ar_jo">阿拉伯语-约旦</string>
+    <string name="yd_lang_ar_ae">阿拉伯语-阿拉伯联合酋长国</string>
+    <string name="yd_lang_ar_bh">阿拉伯语-巴林</string>
+    <string name="yd_lang_ar_dz">阿拉伯语-阿尔及利亚</string>
+    <string name="yd_lang_ar_sa">阿拉伯语-沙特阿拉伯</string>
+    <string name="yd_lang_ar_iq">阿拉伯语-伊拉克</string>
+    <string name="yd_lang_ar_kw">阿拉伯语-科威特</string>
+    <string name="yd_lang_ar_ma">阿拉伯语-摩洛哥</string>
+    <string name="yd_lang_ar_tn">阿拉伯语-突尼斯</string>
+    <string name="yd_lang_ar_om">阿拉伯语-阿曼</string>
+    <string name="yd_lang_ar_ps">阿拉伯语-巴勒斯坦国</string>
+    <string name="yd_lang_ar_qa">阿拉伯语-卡塔尔</string>
+    <string name="yd_lang_ar_lb">阿拉伯语-黎巴嫩</string>
+    <string name="yd_lang_ar_eg">阿拉伯语-埃及</string>
+    <string name="yd_lang_pl">波兰语-波兰</string>
+    <string name="yd_lang_da">丹麦语-丹麦</string>
+    <string name="yd_lang_de">德语-德国</string>
+    <string name="yd_lang_ru">俄语-俄罗斯</string>
+    <string name="yd_lang_fr">法语-法国</string>
+    <string name="yd_lang_fr_ca">法语-加拿大</string>
+    <string name="yd_lang_fi">芬兰语-芬兰</string>
+    <string name="yd_lang_ko">韩语-韩国</string>
+    <string name="yd_lang_nl">荷兰语-荷兰</string>
+    <string name="yd_lang_cs">捷克语-捷克共和国</string>
+    <string name="yd_lang_hr">克罗地亚语-克罗地亚</string>
+    <string name="yd_lang_lv">拉脱维亚语-拉脱维亚</string>
+    <string name="yd_lang_ro">罗马尼亚语-罗马尼亚</string>
+    <string name="yd_lang_ms">马来语-马来西亚</string>
+    <string name="yd_lang_pt_bra">葡萄牙语-巴西</string>
+    <string name="yd_lang_pt">葡萄牙语-葡萄牙</string>
+    <string name="yd_lang_ja">日语-日本</string>
+    <string name="yd_lang_sv">瑞典语-瑞典</string>
+    <string name="yd_lang_te">泰卢固语-印度</string>
+    <string name="yd_lang_ta">泰米尔语-印度</string>
+    <string name="yd_lang_ta_sg">泰米尔语-新加坡</string>
+    <string name="yd_lang_ta_lk">泰米尔语-斯里兰卡</string>
+    <string name="yd_lang_ta_my">泰米尔语-马来西亚</string>
+    <string name="yd_lang_th">泰语-泰国</string>
+    <string name="yd_lang_tr">土耳其语-土耳其</string>
+    <string name="yd_lang_es">西班牙语-西班牙</string>
+    <string name="yd_lang_es_ar">西班牙语-阿根廷</string>
+    <string name="yd_lang_es_bo">西班牙语-玻利维亚</string>
+    <string name="yd_lang_es_cl">西班牙语-智利</string>
+    <string name="yd_lang_es_col">西班牙语-哥伦比亚</string>
+    <string name="yd_lang_es_cr">西班牙语-哥斯达黎加</string>
+    <string name="yd_lang_es_ec">西班牙语-厄瓜多尔</string>
+    <string name="yd_lang_es_sv">西班牙语-萨尔瓦多</string>
+    <string name="yd_lang_es_us">西班牙语-美国</string>
+    <string name="yd_lang_es_gt">西班牙语-危地马拉</string>
+    <string name="yd_lang_es_hn">西班牙语-洪都拉斯</string>
+    <string name="yd_lang_es_mex">西班牙语-墨西哥</string>
+    <string name="yd_lang_es_ni">西班牙语-尼加拉瓜</string>
+    <string name="yd_lang_es_pa">西班牙语-巴拿马</string>
+    <string name="yd_lang_es_py">西班牙语-巴拉圭</string>
+    <string name="yd_lang_es_pe">西班牙语-秘鲁</string>
+    <string name="yd_lang_es_pr">西班牙语-波多黎各</string>
+    <string name="yd_lang_es_do">西班牙语-多米尼加共和国</string>
+    <string name="yd_lang_es_uy">西班牙语-乌拉圭</string>
+    <string name="yd_lang_es_ve">西班牙语-委内瑞拉</string>
+    <string name="yd_lang_it">意大利语-意大利</string>
+    <string name="yd_lang_hi">印地语-印度</string>
+    <string name="yd_lang_vi">越南语-越南</string>
+    <string name="yd_lang_lo">老挝语-老挝</string>
+    <string name="yd_lang_bn">孟加拉语-孟加拉</string>
+    <string name="yd_lang_bn_in">孟加拉语-印度</string>
+    <string name="yd_lang_tl">菲律宾语-菲律宾</string>
+
+    <string name="recognition_language_selection">识别语言选择</string>
+    <string name="translation_language_selection">翻译语言选择</string>
+    <string name="set_page">设置</string>
+
+    <string name="add_language">添加语言</string>
+    <string name="delect_language">删除语言</string>
+    <string name="check_version">版本检测</string>
+
+    //err  str
+    <string name="err_net">网络不可用，请连接到WLAN使用MyW翻译...</string>
+    <string name="err_code">发生错误，请重新启动应用程序...</string>
+</resources>

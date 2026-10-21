@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="120dp"
+    >
+
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="120dp"
+        android:textSize="28dp"
+        android:textColor="@color/text_translation_over_color"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="16dp"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="15dp"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true">
+
+
+
+        <ImageView
+            android:id="@+id/iv_reduce"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="16dp"
+            android:src="@drawable/icon_reduce"/>
+
+        <TextView
+            android:id="@+id/tv_v"
+            android:layout_width="wrap_content"
+
+            android:textSize="20dp"
+            android:textColor="@color/text_translation_over_color"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="16dp"
+            android:src="@drawable/icon_add"/>
+
+        <ImageView
+            android:id="@+id/iv_set"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="16dp"
+            android:src="@drawable/icon_set"/>
+
+        <ImageView
+            android:id="@+id/iv_update"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="16dp"
+            android:src="@drawable/icon_update"/>
+
+    </LinearLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="1dp"
+        android:background="@color/set_line_color"/>
+</RelativeLayout>

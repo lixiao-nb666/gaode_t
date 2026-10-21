@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10px"
-        android:textSize="38px"/>
+        android:textSize="19dp"/>
 
     <Spinner
         android:id="@+id/sp_1"

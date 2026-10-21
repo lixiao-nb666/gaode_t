@@ -1,6 +1,5 @@
 package com.nrmyw.gaode_t.activity.t800;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -17,9 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.newbee.bulid_lib.mybase.ToastUtil;
 import com.nrmyw.gaode_t.R;
-import com.nrmyw.gaode_t.activity.t800.T800TestDataType;
 import com.nrmyw.hud_data_lib.bean.HudLaneCountBean;
 import com.nrmyw.hud_data_lib.bean.HudLaneHiPassCountBean;
+import com.nrmyw.hud_data_lib.type.notification.HudNotificationIconType;
 import com.nrmyw.hud_data_lib.type.reach.HudReachType;
 import com.nrmyw.hud_data_lib.type.speed.HudSpeedingShowBJType;
 import com.nrmyw.hud_data_lib.type.turn.HudTurnBjType;
@@ -27,8 +26,9 @@ import com.nrmyw.hud_data_lib.type.turn.HudTurnType;
 import com.nrmyw.hud_data_lib.type.warningproint.HudWarningPointType;
 import com.nrmyw.hud_data_lib.type.yellow_statu.HudYellowStatuBjType;
 
+import java.util.List;
 
-;import java.util.List;
+;
 
 public class T800TestDataAdapter extends RecyclerView.Adapter {
     private final String tag = getClass().getName() + ">>>>";
@@ -66,7 +66,7 @@ public class T800TestDataAdapter extends RecyclerView.Adapter {
                 rsId=R.layout.adapter_t800_test_data_interval_speed;
                 break;
             case speeding:
-            case show_Yellow_Statu:
+            case show_title_Yellow_Statu:
             case TURN_BJ:
                 rsId=R.layout.adapter_t800_test_data_speeding;
                 break;
@@ -77,6 +77,8 @@ public class T800TestDataAdapter extends RecyclerView.Adapter {
                 break;
             case WarningPoint_2:
             case TurnType_2:
+            case show_wp_Yellow_Statu:
+            case NOTIFICTION_ICON:
                 rsId=R.layout.adapter_t800_test_data_warning_point_2;
                 break;
             case ReachInfo_1:
@@ -147,7 +149,7 @@ public class T800TestDataAdapter extends RecyclerView.Adapter {
                     public void onNothingSelected(AdapterView<?> parent) { }
                 });
                 break;
-            case show_Yellow_Statu:
+            case show_title_Yellow_Statu:
                 ArrayAdapter ysBjAdapter=new ArrayAdapter(viewHodler.itemView.getContext(), android.R.layout.simple_list_item_1, HudYellowStatuBjType.values());
                 viewHodler.SP1.setAdapter(ysBjAdapter);
                 viewHodler.SP1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -240,6 +242,51 @@ public class T800TestDataAdapter extends RecyclerView.Adapter {
                     public void onNothingSelected(AdapterView<?> parent) { }
                 });
                 break;
+            case show_wp_Yellow_Statu:
+                ArrayAdapter yt1Adapter=new ArrayAdapter(viewHodler.itemView.getContext(), android.R.layout.simple_list_item_1,HudYellowStatuBjType.values());
+                viewHodler.SP1.setAdapter(yt1Adapter);
+                viewHodler.SP1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        viewHodler.sp1Index=position;
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) { }
+                });
+                ArrayAdapter yt2Adapter=new ArrayAdapter(viewHodler.itemView.getContext(), android.R.layout.simple_list_item_1, HudYellowStatuBjType.values());
+                viewHodler.SP2.setAdapter(yt2Adapter);
+                viewHodler.SP2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        viewHodler.sp2Index=position;
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) { }
+                });
+                break;
+            case NOTIFICTION_ICON:
+                ArrayAdapter ni1Adapter=new ArrayAdapter(viewHodler.itemView.getContext(), android.R.layout.simple_list_item_1, HudNotificationIconType.values());
+                viewHodler.SP1.setAdapter(ni1Adapter);
+                viewHodler.SP1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        viewHodler.sp1Index=position;
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) { }
+                });
+                ArrayAdapter ni2Adapter=new ArrayAdapter(viewHodler.itemView.getContext(), android.R.layout.simple_list_item_1, HudNotificationIconType.values());
+                viewHodler.SP2.setAdapter(ni2Adapter);
+                viewHodler.SP2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        viewHodler.sp2Index=position;
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) { }
+                });
+
+                break;
             case LaneInformation_0:
                 setItemList(viewHodler,t800TestDataType,0,10);
                 break;
@@ -251,7 +298,7 @@ public class T800TestDataAdapter extends RecyclerView.Adapter {
                 setNumbSp(viewHodler,0,10);
                 break;
             case Brightness_2:
-                setNumbSp(viewHodler,1,10);
+                setNumbSp(viewHodler,1,14);
                 break;
         }
         viewHodler.sendBt.setOnClickListener(new View.OnClickListener() {
@@ -318,7 +365,7 @@ public class T800TestDataAdapter extends RecyclerView.Adapter {
                     case speeding:
                         itemClick.nowSelect(t800TestDataType,HudSpeedingShowBJType.values()[viewHodler.sp1Index]);
                         break;
-                    case show_Yellow_Statu:
+                    case show_title_Yellow_Statu:
                         itemClick.nowSelect(t800TestDataType,HudYellowStatuBjType.values()[viewHodler.sp1Index]);
                         break;
                     case TURN_BJ:
@@ -345,6 +392,12 @@ public class T800TestDataAdapter extends RecyclerView.Adapter {
                         break;
                     case TurnType_2:
                         itemClick.nowSelect(t800TestDataType,HudTurnType.values()[viewHodler.sp1Index],HudTurnType.values()[viewHodler.sp2Index]);
+                        break;
+                    case show_wp_Yellow_Statu:
+                        itemClick.nowSelect(t800TestDataType,HudYellowStatuBjType.values()[viewHodler.sp1Index],HudYellowStatuBjType.values()[viewHodler.sp2Index]);
+                        break;
+                    case NOTIFICTION_ICON:
+                        itemClick.nowSelect(t800TestDataType,HudNotificationIconType.values()[viewHodler.sp1Index],HudNotificationIconType.values()[viewHodler.sp2Index]);
                         break;
                     case ReachInfo_1:
                         int reach1Dis=getNeedSpeed(viewHodler.numb1ET,"dis is null !");
@@ -515,7 +568,7 @@ public class T800TestDataAdapter extends RecyclerView.Adapter {
                     numb5ET=itemView.findViewById(R.id.et_numb5);
                     break;
                 case speeding:
-                case show_Yellow_Statu:
+                case show_title_Yellow_Statu:
                 case TURN_BJ:
                     SP1=itemView.findViewById(R.id.sp_1);
                     break;
@@ -527,6 +580,8 @@ public class T800TestDataAdapter extends RecyclerView.Adapter {
                     break;
                 case WarningPoint_2:
                 case TurnType_2:
+                case show_wp_Yellow_Statu:
+                case NOTIFICTION_ICON:
                     SP1=itemView.findViewById(R.id.sp_1);
                     SP2=itemView.findViewById(R.id.sp_2);
                     break;

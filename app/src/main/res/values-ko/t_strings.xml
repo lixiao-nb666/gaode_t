@@ -1,0 +1,114 @@
+<resources>
+
+
+    <string name="not_speak_for_a_while">한동안 말이 없었다 !</string>
+    <string name="not_speak_after_start">시작한 뒤로는 말이 없었다 !</string>
+    <string name="asr_stop">asr_중지</string>
+    <string name="asr_reconnecting">연결 중...</string>
+    <string name="bluetooth_audio_connected">블루투스 오디오 장치가 성공적으로 연결되었습니다 !</string>
+    <string name="bluetooth_audio_disconnected">블루투스 오디오 장치 연결이 끊어졌다 !</string>
+
+
+
+    //中文
+    <string name="yd_lang_zh">중국어-간 체</string>
+    <string name="yd_lang_zh_twn">중국어-중국어</string>
+    <string name="yd_lang_enzh">중국어-중영 혼합</string>
+    //英文
+    <string name="yd_lang_en">영어-通用</string>
+    <string name="yd_lang_en_aus">영어-오스트레일리아</string>
+    <string name="yd_lang_en_ca">영어-캐나다</string>
+    <string name="yd_lang_en_gh">영어-가나</string>
+    <string name="yd_lang_en_gbr">영어-영국</string>
+    <string name="yd_lang_en_ind">영어-인도</string>
+    <string name="yd_lang_en_ie">영어-아일랜드</string>
+    <string name="yd_lang_en_ke">영어-케냐</string>
+    <string name="yd_lang_en_nz">영어-뉴질랜드</string>
+    <string name="yd_lang_en_ng">영어-나이지리아</string>
+    <string name="yd_lang_en_ph">영어-필리핀</string>
+    <string name="yd_lang_en_sg">영어-싱가포르</string>
+    <string name="yd_lang_en_zaf">영어-남아프리카 공화국</string>
+    <string name="yd_lang_en_tz">영어-탄자니아</string>
+    <string name="yd_lang_en_us">영어-미국</string>
+
+    <string name="yd_lang_ar_il">아랍어로-이스라엘</string>
+    <string name="yd_lang_ar_jo">아랍어로-요르단</string>
+    <string name="yd_lang_ar_ae">아랍어로-아랍 에미리트 연합</string>
+    <string name="yd_lang_ar_bh">아랍어로-바레인</string>
+    <string name="yd_lang_ar_dz">아랍어로-알제리</string>
+    <string name="yd_lang_ar_sa">아랍어로-사우디아라비아</string>
+    <string name="yd_lang_ar_iq">아랍어로-이라크</string>
+    <string name="yd_lang_ar_kw">아랍어로-쿠웨이트</string>
+    <string name="yd_lang_ar_ma">아랍어로-모로코</string>
+    <string name="yd_lang_ar_tn">아랍어로-튀니지</string>
+    <string name="yd_lang_ar_om">아랍어로-오만</string>
+    <string name="yd_lang_ar_ps">아랍어로-팔레스티나국</string>
+    <string name="yd_lang_ar_qa">아랍어로-카타르</string>
+    <string name="yd_lang_ar_lb">아랍어로-레바논</string>
+    <string name="yd_lang_ar_eg">아랍어로-이집트</string>
+    <string name="yd_lang_pl">폴란드어-폴란드</string>
+    <string name="yd_lang_da">덴마크어-덴마크</string>
+    <string name="yd_lang_de">독일어-독일</string>
+    <string name="yd_lang_ru">러시아어-러시아</string>
+    <string name="yd_lang_fr">프랑스어-프랑스</string>
+    <string name="yd_lang_fr_ca">프랑스어-캐나다</string>
+    <string name="yd_lang_fi">핀란드어-핀란드어</string>
+    <string name="yd_lang_ko">한국어-한국</string>
+    <string name="yd_lang_nl">네덜란드어로-네덜란드</string>
+    <string name="yd_lang_cs">체코어로-체코 공화국</string>
+    <string name="yd_lang_hr">크로아티아어-크로아티아</string>
+    <string name="yd_lang_lv">라트비아어-라트비아</string>
+    <string name="yd_lang_ro">루마니아어-루마니아</string>
+    <string name="yd_lang_ms">말레이어-말레이시아</string>
+    <string name="yd_lang_pt_bra">포르투갈어로-브라질</string>
+    <string name="yd_lang_pt">포르투갈어로-포르투갈</string>
+    <string name="yd_lang_ja">일본어-일본</string>
+    <string name="yd_lang_sv">스웨덴어-스웨덴</string>
+    <string name="yd_lang_te">태루구어-인도</string>
+    <string name="yd_lang_ta">타밀어-인도</string>
+    <string name="yd_lang_ta_sg">타밀어-싱가포르</string>
+    <string name="yd_lang_ta_lk">타밀어-스리랑카</string>
+    <string name="yd_lang_ta_my">타밀어-말레이시아</string>
+    <string name="yd_lang_th">타이 어로-태국</string>
+    <string name="yd_lang_tr">터키어로-터키</string>
+    <string name="yd_lang_es">스페인어-스페인</string>
+    <string name="yd_lang_es_ar">스페인어-아르헨티나</string>
+    <string name="yd_lang_es_bo">스페인어-볼리비아</string>
+    <string name="yd_lang_es_cl">스페인어-칠레</string>
+    <string name="yd_lang_es_col">스페인어-콜롬비아</string>
+    <string name="yd_lang_es_cr">스페인어-코스타리카</string>
+    <string name="yd_lang_es_ec">스페인어-코스타리카</string>
+    <string name="yd_lang_es_sv">스페인어-엘살바도르</string>
+    <string name="yd_lang_es_us">스페인어-미국</string>
+    <string name="yd_lang_es_gt">스페인어-과테말라</string>
+    <string name="yd_lang_es_hn">스페인어-온두라스</string>
+    <string name="yd_lang_es_mex">스페인어-멕시코</string>
+    <string name="yd_lang_es_ni">스페인어-니카라과</string>
+    <string name="yd_lang_es_pa">스페인어-파나마</string>
+    <string name="yd_lang_es_py">스페인어-파라과이</string>
+    <string name="yd_lang_es_pe">스페인어-페루</string>
+    <string name="yd_lang_es_pr">스페인어-푸에르토리코</string>
+    <string name="yd_lang_es_do">스페인어-도미니카 공화국</string>
+    <string name="yd_lang_es_uy">스페인어-우루과이</string>
+    <string name="yd_lang_es_ve">스페인어-베네수엘라</string>
+    <string name="yd_lang_it">이탈리아어로-이탈리아</string>
+    <string name="yd_lang_hi">힌디어-인도</string>
+    <string name="yd_lang_vi">베트남어-베트남</string>
+    <string name="yd_lang_lo">라오스어-라오스</string>
+    <string name="yd_lang_bn">벵갈어-방글라데시</string>
+    <string name="yd_lang_bn_in">벵갈어-인도</string>
+    <string name="yd_lang_tl">필리핀어로-필리핀</string>
+
+    <string name="recognition_language_selection">인식 언어 선택</string>
+    <string name="translation_language_selection">번역 언어 선택</string>
+    <string name="set_page">설정</string>
+
+    <string name="add_language">언어 추가</string>
+    <string name="delect_language">언어 삭제</string>
+    <string name="check_version">버전 검사</string>
+
+    //err  str
+    <string name="err_net">네트워크를 이용할 수 없습니다. myw 번역을 사용하려면 wlan에 연결하십시오...</string>
+    <string name="err_code">오류가 발생했습니다. 프로그램을 다시 시작하십시오...</string>
+
+</resources>

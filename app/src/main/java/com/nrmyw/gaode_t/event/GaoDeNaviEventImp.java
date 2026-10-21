@@ -94,7 +94,7 @@ public interface GaoDeNaviEventImp {
     public void deviceSetSound(int v);
     //查询设备提示音
     public void deviceQuePromptToneStatu();
-    public void deviceSetePromptToneStatu(boolean isOpen);
+    public void deviceSetPromptToneStatu(boolean isOpen);
     //查询设备GPS速度比例值
     public void deviceQueGpsSpeed();
     public void deviceSetGpsSpeed(int v);

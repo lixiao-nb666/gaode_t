@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hud_app_bj_3"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="120dp"
+        android:gravity="bottom"
+        android:text="HUD_OTA"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="33dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="15dp"
+        android:background="@color/set_line_color"/>
+
+    <TextView
+        android:id="@+id/tv_hud_ota_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="120dp"
+        android:gravity="bottom"
+        android:text="HUD_OTA"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="33dp" />
+
+
+
+    <TextView
+        android:id="@+id/tv_hud_ota_down_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="120dp"
+        android:gravity="bottom"
+        android:text="HUD_OTA"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="33dp" />
+
+</LinearLayout>

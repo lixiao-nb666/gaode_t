@@ -1,5 +1,7 @@
 package com.nrmyw.gaode_t.type;
 
+import com.nrmyw.hud_data_lib.type.warningproint.HudWarningPointType;
+
 public enum NaviSdkCamera {
     NONE(-1),
     TRAFFICLIGHT (2),//闯红灯拍照
@@ -32,6 +34,8 @@ public enum NaviSdkCamera {
     public int getIconType() {
         return iconType;
     }
+
+
 
 
 

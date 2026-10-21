@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="420dp"
+    android:layout_height="240dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="12dp">
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+
+            android:src="@drawable/ar_s_ble"/>
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ar_s_tws"/>
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ar_s_hotspot"/>
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ar_s_wifi"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_hud_show_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="14dp"
+        android:textColor="@color/text_translation_over_color"
+        android:text="0000-00-00 00:00:00"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_height="match_parent">
+        <include layout="@layout/huynew_ar_demo_body_main_page"/>
+
+        <include layout="@layout/huynew_ar_demo_body_translation_page"/>
+    </FrameLayout>
+
+
+</RelativeLayout>

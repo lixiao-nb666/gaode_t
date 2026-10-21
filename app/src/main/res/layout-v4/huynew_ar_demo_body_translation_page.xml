@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/ll_ar_body_translation_page"
+            android:visibility="gone">
+
+
+
+    <TextView
+        android:id="@+id/tv_ar_translation_str_1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="37dp"
+        android:layout_marginRight="37dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="fdsfjsdklfjslkdjflksjdfslkdjflskjdfsldkjfsdlkjfsdlfjsldkjfsldkfjlsdkjfsldkjflskadjflksdjflksdajfksldajfslkdfjsldkfjsalkdfjsdaklfjsldjfsdalkfjsla"
+        android:textColor="@color/text_translation_over_color"/>
+
+    <View
+        android:layout_width="347dp"
+        android:layout_height="8dp"
+        android:background="@drawable/ar_translation_line"/>
+
+    <TextView
+        android:id="@+id/tv_ar_translation_str_2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="37dp"
+        android:layout_marginRight="37dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="fdsfjsdklfjslkdjflksjdfslkdjflskjdfsldkjfsdlkjfsdlfjsldkjfsldkfjlsdkjfsldkjflskadjflksdjflksdajfksldajfslkdfjsldkfjsalkdfjsdaklfjsldjfsdalkfjsla"
+        android:textColor="@color/text_translation_over_color"/>
+
+</LinearLayout>

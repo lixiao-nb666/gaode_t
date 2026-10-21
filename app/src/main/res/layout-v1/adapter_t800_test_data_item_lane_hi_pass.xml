@@ -9,15 +9,15 @@
         android:id="@+id/tv_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10px"
-        android:textSize="38px"/>
+        android:layout_marginLeft="5dp"
+        android:textSize="19dp"/>
 
     <EditText
         android:id="@+id/et_numb1"
-        android:layout_width="100px"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:textSize="40px"/>
+        android:textSize="20dp"/>
 
 
 </LinearLayout>

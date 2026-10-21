@@ -25,8 +25,8 @@ public enum T800TestTitleType {
     SOUND(R.string.t800_test_title_sound),
     SET(R.string.t800_test_title_set,R.string.t800_test_title_set_body),
     SEND_IMAGE(R.string.t800_test_title_send_image,R.string.t800_test_title_send_image_body),
-    STATU(R.string.t800_test_title_statu,R.string.t800_test_title_statu_body)
-
+    STATU(R.string.t800_test_title_statu,R.string.t800_test_title_statu_body),
+    DISPLAY(R.string.t800_test_title_display,R.string.t800_test_title_display_body),
 
     ;
     private int titleRsId;

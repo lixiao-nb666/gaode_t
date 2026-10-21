@@ -10,6 +10,14 @@ public class GaoDeLaneTypeToT800LaneTypeUtil {
 
 
     public static HudLaneType getNeedLaneType(int backgroundLane, int frontLane){
+        LG.i("找不到看看值得111:"+backgroundLane+"----"+frontLane);
+        int imageRs=HudLaneTypeUtil.getInstance().getNeedImageRs(backgroundLane,frontLane);
+        if(imageRs!=0&&imageRs!=-1){
+            HudLaneType hudLaneType=NaviSdkLaneType.useImageRsGetHudLaneType(imageRs);
+            if(null!=hudLaneType&&hudLaneType!=HudLaneType.NONE){
+                return hudLaneType;
+            }
+        }
         NaviSdkLaneType backgroundLaneType=NaviSdkLaneType.getNeedType(backgroundLane);
         NaviSdkLaneType frontLaneLaneType=NaviSdkLaneType.getNeedType(frontLane);
         switch (backgroundLaneType){

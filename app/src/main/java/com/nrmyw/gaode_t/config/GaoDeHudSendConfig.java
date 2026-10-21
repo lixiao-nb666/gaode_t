@@ -12,9 +12,11 @@ public class GaoDeHudSendConfig {
 
     private static GaoDeHudSendConfig config;
 
-    private boolean isNeedAddLaneInfo=true;
+    private boolean isNeedAddLaneInfo=false;
 
     private BleSendBitmapQualityType qualityType;
+
+    public boolean useNewIcon;
 
 //    private BleDeviceType connectedBleDevice;
 
@@ -37,7 +39,11 @@ public class GaoDeHudSendConfig {
         return isNeedAddLaneInfo;
     }
 
-//    public void setNeedAddLaneInfo(boolean needAddLaneInfo) {
+    public void setNeedAddLaneInfo(boolean needAddLaneInfo) {
+        isNeedAddLaneInfo = needAddLaneInfo;
+    }
+
+    //    public void setNeedAddLaneInfo(boolean needAddLaneInfo) {
 //        isNeedAddLaneInfo = needAddLaneInfo;
 //    }
 //
@@ -85,4 +91,13 @@ public class GaoDeHudSendConfig {
 ////        connectedBleDevice=null;
 ////        GaoDeEventManager.getInstance().sendEventImp(null);
 //    }
+
+
+    public boolean isUseNewIcon() {
+        return useNewIcon;
+    }
+
+    public void setUseNewIcon(boolean useNewIcon) {
+        this.useNewIcon = useNewIcon;
+    }
 }

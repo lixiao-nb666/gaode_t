@@ -24,14 +24,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="speed"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
 
         <EditText
             android:id="@+id/et_numb1"
             android:layout_width="100px"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
 
     </LinearLayout>
 

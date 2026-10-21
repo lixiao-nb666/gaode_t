@@ -1,8 +1,8 @@
-<resources>
-
-
-    <string name="main_init_ble">确定授权全部权限了，点击初始化并搜索匹配蓝牙</string>
-    <string name="main_search_ble">搜索匹配蓝牙</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">HUD导航</string>
+    <string name="request_permissions">请求权限：有必须要权限请授权使用</string>
+    <string name="main_init_ble">初始蓝牙</string>
+    <string name="main_search_ble">搜索蓝牙</string>
     <string name="main_set_ble">蓝牙设置</string>
     <string name="main_send_ble_test_data">发送测试数据</string>
     <string name="main_start_navigation">开始导航</string>
@@ -16,7 +16,13 @@
     <string name="ble_set_sound">声音</string>
     <string name="ble_set_device_sound">提示音</string>
     <string name="ble_set_gps_speed">GPS速度比例值</string>
-
+    <string name="ble_set_image_quality">图片质量</string>
+    <string name="ble_set_progress_quality">进度条质量</string>
+    <string name="ble_set_daylight_search">日光采集</string>
+    <string name="ble_set_image_size">图片尺寸</string>
+    <string name="ble_set_time_difference">时间差</string>
+    <string name="ble_set_pair_type">匹配类型</string>
+    <string name="t800_test_item_luminance_percent">设置亮度百分比</string>
     //T800Test-title
     <string name="t800_test_title_mq">队列测试</string>
     <string name="t800_test_title_time">时间(0x01)：</string>
@@ -86,6 +92,12 @@
         0x13:闪烁转向图标
     </string>
 
+    <string name="t800_test_title_display">显示矩形：(0x74)</string>
+    <string name="t800_test_title_display_body">
+        0x74:显示矩形
+
+    </string>
+
     //T800Test-item
     <string name="t800_test_item_mq_100">100条测试指令</string>
     <string name="t800_test_item_time">测试时间</string>
@@ -103,6 +115,7 @@
     <string name="t800_test_item_warning_point_1_b">1号警示图标 body</string>
     <string name="t800_test_item_warning_point_2_t">2号警示图标 title</string>
     <string name="t800_test_item_warning_point_2_b">2号警示图标 body</string>
+
     <string name="t800_test_item_reachinfo_1">发送随机时间类型</string>
     <string name="t800_test_item_reachinfo_2">发送到达信息的字符串</string>
     <string name="t800_test_item_laneinformation_hide">隐藏车道</string>
@@ -116,11 +129,16 @@
     <string name="t800_test_item_laneinformation_7">61-70</string>
     <string name="t800_test_item_laneinformation_8">71-80</string>
     <string name="t800_test_item_laneinformation_hi_pass_auto_l">设置自动长度</string>
+    <string name="t800_test_item_laneinformation_set_new_or_old">设置新旧车道信息</string>
     <string name="t800_test_item_laneinformation_hi_pass_1">随机显示</string>
     <string name="t800_test_item_laneinformation_hi_pass_2">显示30车道</string>
+    <string name="t800_test_item_trun_type_set_new_or_old">设置新旧转向信息</string>
     <string name="t800_test_item_trun_type_1">单个随机</string>
     <string name="t800_test_item_trun_type_2">2个随机</string>
     <string name="t800_test_item_trun_type_3">循环显示</string>
+    <string name="t800_test_item_big_trun_type_show">大转向图显示</string>
+    <string name="t800_test_item_big_trun_type_hide">大转向图隐藏</string>
+
     <string name="t800_test_item_next_road_name">下一个车道：测试道路名称+随机数字</string>
     <string name="t800_test_item_now_road_hide">当前车道：隐藏名字</string>
     <string name="t800_test_item_now_road_name_1">当前车道：目的地名字"</string>
@@ -142,6 +160,8 @@
     <string name="t800_test_item_sn_write">重写SN：T700+随机6位的字母数字</string>
     <string name="t800_test_item_que_device_version">查询设备版本信息</string>
     <string name="t800_test_item_factory_set">恢复工厂设置</string>
+    <string name="t800_test_item_set_ble_name">设置数据蓝牙名字</string>
+    <string name="t800_test_item_set_tws_name">设置音频蓝牙名字</string>
     <string name="t800_test_item_sound_set">设置随机声音0-10</string>
     <string name="t800_test_item_sound_que">查询声音大小</string>
     <string name="t800_test_item_device_sound_open">启动提示音:开启</string>
@@ -155,8 +175,11 @@
     <string name="t800_test_item_image_show">显示实景图</string>
     <string name="t800_test_item_image_hide">隐藏实景图</string>
     <string name="t800_test_item_bar_hide">隐藏进度条</string>
-    <string name="t800_test_item_show_yellow_statu">显示黄色状态栏</string>
-    <string name="t800_test_item_hide_yellow_statu">隐藏黄色状态栏</string>
+    <string name="t800_test_item_show_yellow_statu_2">显示2个警示图黄色状态栏</string>
+    <string name="t800_test_item_show_yellow_statu">显示头部黄色状态栏</string>
+    <string name="t800_test_item_hide_wp_yellow_statu" >隐藏警示图黄色状态栏</string>
+    <string name="t800_test_item_hide_title_yellow_statu" >隐藏头部黄色状态栏</string>
+    <string name="t800_test_item_hide_yellow_statu">隐藏全部黄色状态栏</string>
     <string name="t800_test_item_yellow_statu_str">黄色状态栏文本</string>
     <string name="t800_test_item_icon_flicker_open">图标闪烁开</string>
     <string name="t800_test_item_icon_flicker_close">图标闪烁关</string>
@@ -164,4 +187,11 @@
     <string name="t800_test_item_set_trun_bj" >设置转向背景-循环</string>
     <string name="t800_test_item_set_yellow_statu_bj" >设置黄色状态栏背景-循环</string>
 
+    <string name="t800_test_item_set_display_rect_init" >初始化</string>
+    <string name="t800_test_item_set_display_rect_top_update" >上方修改</string>
+    <string name="t800_test_item_set_display_rect_bottom_update" >下方修改</string>
+    <string name="t800_test_item_set_display_notifiction_1" >显示一个提示框</string>
+    <string name="t800_test_item_set_display_notifiction_2" >显示二个提示框</string>
+    <string name="t800_test_item_set_display_notifiction_hide" >隐藏提示框</string>
+    <string name="t800_test_item_set_display_notifiction_icon" >提示框图标控制</string>
 </resources>

@@ -1,22 +1,25 @@
 package com.nrmyw.gaode_t.gaode;
 
 
-
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.amap.api.navi.AMapNavi;
+import com.amap.api.navi.AMapNaviDriveListener;
 import com.amap.api.navi.AMapNaviListener;
 import com.amap.api.navi.INaviInfoCallback;
-
+import com.amap.api.navi.ParallelRoadListener;
+import com.amap.api.navi.enums.AMapNaviParallelRoadStatus;
 import com.amap.api.navi.enums.CarEnterCameraStatus;
 import com.amap.api.navi.model.AMapCalcRouteResult;
 import com.amap.api.navi.model.AMapLaneInfo;
 import com.amap.api.navi.model.AMapModelCross;
 import com.amap.api.navi.model.AMapNaviCameraInfo;
 import com.amap.api.navi.model.AMapNaviCross;
+import com.amap.api.navi.model.AMapNaviDriveComfort;
+import com.amap.api.navi.model.AMapNaviDriveEvent;
 import com.amap.api.navi.model.AMapNaviLocation;
 import com.amap.api.navi.model.AMapNaviRouteNotifyData;
 import com.amap.api.navi.model.AMapNaviTrafficFacilityInfo;
@@ -25,16 +28,15 @@ import com.amap.api.navi.model.AMapTrafficStatus;
 import com.amap.api.navi.model.AimLessModeCongestionInfo;
 import com.amap.api.navi.model.AimLessModeStat;
 import com.amap.api.navi.model.NaviInfo;
-
-
 import com.nrmyw.gaode_t.app.MyApp;
 import com.nrmyw.gaode_t.config.GaoDeHudSendConfig;
 import com.nrmyw.gaode_t.event.GaoDeNaviEventImp;
 import com.nrmyw.gaode_t.event.navi.GaoDeEventManager;
 import com.nrmyw.gaode_t.log.LG;
 import com.nrmyw.gaode_t.type.NaviSdkGpsType;
-import com.nrmyw.gaode_t.view.MyGaoDeSendBitmapView;
-
+import com.nrmyw.gaode_t.view.HudManagerAndSetView;
+import com.nrmyw.hud_data_lib.type.image.HudImageType;
+import com.nrmyw.hud_manager_lib.type.HudDisplayMold;
 
 import java.util.List;
 
@@ -77,7 +79,13 @@ public class GaoDeListenManager {
 
             int nowSpeed= (int) aMapNaviLocation.getSpeed();
             eventImp().updateNowSpeed(nowSpeed);
+            Log.i("kankanindex","kankanindex1:---"+aMapNaviLocation.getCurLinkIndex());
+            Log.i("kankanindex","kankanindex2:---"+aMapNaviLocation.getCurPointIndex());
+            Log.i("kankanindex","kankanindex3:---"+aMapNaviLocation.getCurStepIndex());
+            hudManagerAndSetView.setLocationChange(aMapNaviLocation);
 
+            //DEMO
+//            HudManager.getInstance().getHudEvent().sendWarningPoint();
         }
 
         @Override
@@ -148,9 +156,29 @@ public class GaoDeListenManager {
 
         @Override
         public void onMapTypeChanged(int i) {
+//            public static final int MAP_TYPE_NORMAL = 1;
+//            public static final int MAP_TYPE_SATELLITE = 2;
+//            public static final int MAP_TYPE_NIGHT = 3;
+//            public static final int MAP_TYPE_NAVI = 4;
+//            public static final int MAP_TYPE_BUS = 5;
+//            public static final int MAP_TYPE_NAVI_NIGHT = 6;
+            switch (i){
+                case 1:
+                case 4:
+                    HudDisplayMold.DAY.setLowLuminance(1);
+                    HudDisplayMold.DAY.setHightLuminance(100);
+//                    HudLuminaceManager.getInstance().setHudDisplayMold(HudDisplayMold.DAY);
+                    break;
+                case 3:
+                case 6:
+                    HudDisplayMold.NIGHT.setLowLuminance(1);
+                    HudDisplayMold.NIGHT.setHightLuminance(100);
+//                    HudLuminaceManager.getInstance().setHudDisplayMold(HudDisplayMold.NIGHT);
+                    break;
+            }
 
             //组件地图白天黑夜模式切换回调
-
+            Log.e("TAG","onDayAndNightModeChanged11:"+i);
         }
 
         @Override
@@ -167,7 +195,8 @@ public class GaoDeListenManager {
 
         @Override
         public void onDayAndNightModeChanged(int i) {
-            //     Log.e("TAG","onDayAndNightModeChanged");
+                 Log.e("TAG","onDayAndNightModeChanged22:"+i);
+
 
         }
 
@@ -296,11 +325,12 @@ public class GaoDeListenManager {
 //            导航引导信息回调。
 
             GaoDeEventManager.getInstance().event(naviInfo);
+            Log.i("kankanyichang","kankanqichang1111:"+naviInfo.toString());
             try {
                 AMapNavi  mAMapNavi = AMapNavi.getInstance(MyApp.getContext());
                 int allLength = mAMapNavi.getNaviPath().getAllLength();
                 List<AMapTrafficStatus> trafficStatuses = mAMapNavi.getTrafficStatuses(0, 0);
-                myGaoDeSendBitmapView.update(allLength, naviInfo.getPathRetainDistance(), trafficStatuses);
+                hudManagerAndSetView.update(allLength, naviInfo.getPathRetainDistance(), trafficStatuses);
             }catch (Exception e){
                 Log.i("kankanyichang","kankanqichang:"+e.toString());
             }
@@ -347,7 +377,7 @@ public class GaoDeListenManager {
             LG.i(tag,"Navie-bitmap----1:开启路口实景图");
 //            showCross(AMapNaviCross aMapNaviCross)
 //            显示路口放大图回调(实景图)。
-//           eventImp().sendImage(aMapNaviCross.getBitmap(),0);
+           eventImp().sendImage(aMapNaviCross.getBitmap(), HudImageType.IMAGE);
 
         }
 
@@ -355,6 +385,7 @@ public class GaoDeListenManager {
         public void hideCross() {
             LG.i(tag,"Navie-bitmap----2:关闭路口实景图");
             eventImp().hideImage();
+
         }
 
 
@@ -363,14 +394,14 @@ public class GaoDeListenManager {
         public void showModeCross(AMapModelCross aMapModelCross) {
             LG.i(tag,"Navie-bitmap----3:显示路口放大图回调(模型图)。1111");
             //这里和客服沟通过了，确定不行，必须要重写ACTIVITY工程量太大了
-            myGaoDeSendBitmapView.showMoldView(aMapModelCross);
+            hudManagerAndSetView.showMoldView(aMapModelCross);
         }
 
         @Override
         public void hideModeCross() {
             LG.i(tag,"Navie-bitmap----4:关闭路口放大图回调(模型图)。");
 //            GaoDeHudSendUtil.hideImage();
-            myGaoDeSendBitmapView.hideMoldView();
+            hudManagerAndSetView.hideMoldView();
         }
 
         @Override
@@ -460,12 +491,209 @@ public class GaoDeListenManager {
 
 
     };
-//    ParallelRoadListener parallelRoadListener=new ParallelRoadListener() {
-//        @Override
-//        public void notifyParallelRoad(AMapNaviParallelRoadStatus aMapNaviParallelRoadStatus) {
-//            LG.i(amap_road_tag, "notifyParallelRoad:" + aMapNaviParallelRoadStatus.getmElevatedRoadStatusFlag());
-//        }
-//    };
+    ParallelRoadListener parallelRoadListener=new ParallelRoadListener() {
+        @Override
+        public void notifyParallelRoad(AMapNaviParallelRoadStatus aMapNaviParallelRoadStatus) {
+            LG.i(amap_road_tag, "notifyParallelRoad:" + aMapNaviParallelRoadStatus.getmElevatedRoadStatusFlag());
+        }
+    };
+
+    private AMapNaviDriveListener aMapNaviDriveListener=new AMapNaviDriveListener() {
+        @Override
+        public void onUpdateDriveComfort(AMapNaviDriveComfort aMapNaviDriveComfort) {
+
+        }
+
+        @Override
+        public void onUpdateDriveEvent(AMapNaviDriveEvent aMapNaviDriveEvent) {
+
+        }
+
+        @Override
+        public void onUpdateNaviSpeedLimitSection(int i) {
+            Log.i("kankanxiansu","看看限速："+i);
+        }
+
+        @Override
+        public void onInitNaviFailure() {
+
+        }
+
+        @Override
+        public void onInitNaviSuccess() {
+
+        }
+
+        @Override
+        public void onStartNavi(int i) {
+
+        }
+
+        @Override
+        public void onTrafficStatusUpdate() {
+
+        }
+
+        @Override
+        public void onLocationChange(AMapNaviLocation aMapNaviLocation) {
+
+        }
+
+        @Override
+        public void onGetNavigationText(int i, String s) {
+
+        }
+
+        @Override
+        public void onGetNavigationText(String s) {
+
+        }
+
+        @Override
+        public void onEndEmulatorNavi() {
+
+        }
+
+        @Override
+        public void onArriveDestination() {
+
+        }
+
+        @Override
+        public void onCalculateRouteFailure(int i) {
+
+        }
+
+        @Override
+        public void onReCalculateRouteForYaw() {
+
+        }
+
+        @Override
+        public void onReCalculateRouteForTrafficJam() {
+
+        }
+
+        @Override
+        public void onArrivedWayPoint(int i) {
+
+        }
+
+        @Override
+        public void onGpsOpenStatus(boolean b) {
+
+        }
+
+        @Override
+        public void onNaviInfoUpdate(NaviInfo naviInfo) {
+
+        }
+
+        @Override
+        public void updateCameraInfo(AMapNaviCameraInfo[] aMapNaviCameraInfos) {
+
+        }
+
+        @Override
+        public void updateIntervalCameraInfo(AMapNaviCameraInfo aMapNaviCameraInfo, AMapNaviCameraInfo aMapNaviCameraInfo1, int i) {
+
+        }
+
+        @Override
+        public void onServiceAreaUpdate(AMapServiceAreaInfo[] aMapServiceAreaInfos) {
+
+        }
+
+        @Override
+        public void showCross(AMapNaviCross aMapNaviCross) {
+
+        }
+
+        @Override
+        public void hideCross() {
+
+        }
+
+        @Override
+        public void showModeCross(AMapModelCross aMapModelCross) {
+            hudManagerAndSetView.showMoldView(aMapModelCross);
+        }
+
+        @Override
+        public void hideModeCross() {
+            hudManagerAndSetView.hideMoldView();
+        }
+
+        @Override
+        public void showLaneInfo(AMapLaneInfo[] aMapLaneInfos, byte[] bytes, byte[] bytes1) {
+
+        }
+
+        @Override
+        public void showLaneInfo(AMapLaneInfo aMapLaneInfo) {
+
+        }
+
+        @Override
+        public void hideLaneInfo() {
+
+        }
+
+        @Override
+        public void onCalculateRouteSuccess(int[] ints) {
+
+        }
+
+        @Override
+        public void notifyParallelRoad(int i) {
+
+        }
+
+        @Override
+        public void OnUpdateTrafficFacility(AMapNaviTrafficFacilityInfo[] aMapNaviTrafficFacilityInfos) {
+
+        }
+
+        @Override
+        public void OnUpdateTrafficFacility(AMapNaviTrafficFacilityInfo aMapNaviTrafficFacilityInfo) {
+
+        }
+
+        @Override
+        public void updateAimlessModeStatistics(AimLessModeStat aimLessModeStat) {
+
+        }
+
+        @Override
+        public void updateAimlessModeCongestionInfo(AimLessModeCongestionInfo aimLessModeCongestionInfo) {
+
+        }
+
+        @Override
+        public void onPlayRing(int i) {
+
+        }
+
+        @Override
+        public void onCalculateRouteSuccess(AMapCalcRouteResult aMapCalcRouteResult) {
+
+        }
+
+        @Override
+        public void onCalculateRouteFailure(AMapCalcRouteResult aMapCalcRouteResult) {
+
+        }
+
+        @Override
+        public void onNaviRouteNotify(AMapNaviRouteNotifyData aMapNaviRouteNotifyData) {
+
+        }
+
+        @Override
+        public void onGpsSignalWeak(boolean b) {
+
+        }
+    };
 
 
     private GaoDeListenManager(){
@@ -508,7 +736,7 @@ public class GaoDeListenManager {
 
 
 
-    private MyGaoDeSendBitmapView myGaoDeSendBitmapView;
+    private HudManagerAndSetView hudManagerAndSetView;
     private View getCustomView(Context context,String title) {
 //        LinearLayout linearLayout = new LinearLayout(context);
 ////        linearLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,300));
@@ -553,10 +781,17 @@ public class GaoDeListenManager {
 //        } catch (Throwable e) {
 //            e.printStackTrace();
 //        }
-        myGaoDeSendBitmapView=new MyGaoDeSendBitmapView(context);
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 333);
-        myGaoDeSendBitmapView.setLayoutParams(params);
-        return myGaoDeSendBitmapView;
+        //最后的代码是下面3行
+//        myGaoDeSendBitmapView=new MyGaoDeSendBitmapView(context);
+//        Log.i("kankanguodajfkja","kankanguodajfkja:"+UiConfig.getMapViewSetViewH()+"--"+UiConfig.h+"---"+UiConfig.w);
+//        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, UiConfig.getMapViewSetViewH());
+//        myGaoDeSendBitmapView.setLayoutParams(params);
+//        myGaoDeSendBitmapView.setMapViewNeedH(UiConfig.getMapViewSetViewH());
+//        hudManagerAndSetView=MyGaoDeSendBitmapView.getInstance().getHudManagerAndSetView(context);
+        hudManagerAndSetView=new HudManagerAndSetView(context);
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        hudManagerAndSetView.setLayoutParams(params);
+        return hudManagerAndSetView;
     }
 
 }

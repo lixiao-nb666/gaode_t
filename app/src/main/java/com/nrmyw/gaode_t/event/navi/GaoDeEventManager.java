@@ -1,16 +1,19 @@
 package com.nrmyw.gaode_t.event.navi;
 
+import android.text.TextUtils;
+import android.util.Log;
+
+import com.amap.api.navi.model.AMapExitDirectionInfo;
 import com.amap.api.navi.model.AMapNaviCameraInfo;
 import com.amap.api.navi.model.AMapServiceAreaInfo;
 import com.amap.api.navi.model.NaviInfo;
-
-
+import com.newbee.bulid_lib.util.RandomUtil;
 import com.nrmyw.gaode_t.bean.HudCameraBean;
 import com.nrmyw.gaode_t.config.GaoDeHudSendConfig;
-import com.nrmyw.gaode_t.type.NaviSdkCamera;
+import com.nrmyw.gaode_t.log.LG;
 import com.nrmyw.gaode_t.util.GaoDeCameraUtil;
+import com.nrmyw.hud_manager_lib.HudManager;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GaoDeEventManager {
@@ -72,6 +75,18 @@ public class GaoDeEventManager {
         gaoDeEvent.setAvoid(naviInfo.getNotAvoidInfo());
         //设置结束标识符号
         gaoDeEvent.setEventDoOver();
+        int routeRemainLightCount=naviInfo.getRouteRemainLightCount();
+        LG.i("kankanxindecanshu","kankanxindecanshu-routeRemainLightCount:"+routeRemainLightCount);
+        int curlink=naviInfo.getCurLink();
+        LG.i("kankanxindecanshu","kankanxindecanshu-curlink:"+curlink);
+        int curStep=naviInfo.getCurStep();
+        LG.i("kankanxindecanshu","kankanxindecanshu-curStep:"+curStep);
+        int curPoint=naviInfo.getCurPoint();
+        LG.i("kankanxindecanshu","kankanxindecanshu-curPoint:"+curPoint);
+        getExitInfo(naviInfo.getExitDirectionInfo(),naviInfo.getCurStepRetainDistance());
+
+
+        LG.i("kankanxindecanshu","kankanxindecanshu--------------------------------------------------------------------");
 //        forbidType
 //        禁行类型 0：禁止左转 1：禁止右转 2：禁止左掉头 3：禁止右掉头 4：禁止直行
 //        AMapExitDirectionInfo aMapExitDirectionInfo=naviInfo.getExitDirectionInfo();
@@ -105,6 +120,49 @@ public class GaoDeEventManager {
 //        LG.i(tag,"onNaviInfoUpdate()---------------------------------------------------");
     }
 
+    private boolean exitNowIsShow;
+    private void getExitInfo(AMapExitDirectionInfo aMapExitDirectionInfo,int dis){
+        if(null==aMapExitDirectionInfo||dis==0){
+            if(exitNowIsShow){
+                exitNowIsShow=false;
+                HudManager.getInstance().getHudEvent().notifictionMsgHide();
+            }
+            return;
+        }
+
+        String[] exitNameInfo=aMapExitDirectionInfo.getExitNameInfo();
+        if(null!=exitNameInfo){
+            for(String exitNameStr:exitNameInfo){
+
+
+            }
+        }
+        String[] directionInfo=aMapExitDirectionInfo.getDirectionInfo();
+        if(null==directionInfo||directionInfo.length==0){
+            if(exitNowIsShow){
+                exitNowIsShow=false;
+                HudManager.getInstance().getHudEvent().notifictionMsgHide();
+            }
+            return;
+        }
+        exitNowIsShow=true;
+        if(directionInfo.length==1){
+            LG.i("kankanxindecanshu","kankanxindecanshu-exitNameStr:"+directionInfo[0]+dis);
+            HudManager.getInstance().getHudEvent().notifictionMsg(directionInfo[0],dis);
+//                    HudManager.getInstance().getHudEvent().notifictionMsg(directionInfo[0],88+ RandomUtil.getInstance().getRandomInt(100));
+        }else if(directionInfo.length>=2){
+            LG.i("kankanxindecanshu","kankanxindecanshu-exitNameStr:"+directionInfo[0]+dis+directionInfo[1]+dis);
+            HudManager.getInstance().getHudEvent().notifictionMsg(directionInfo[0],dis,directionInfo[1],dis);
+//                    HudManager.getInstance().getHudEvent().notifictionMsg(directionInfo[0],88+ RandomUtil.getInstance().getRandomInt(100),directionInfo[1],naviInfo.getCurStepRetainDistance());
+        }
+
+
+
+
+
+
+    }
+
 
 
     public void cameraEvent(AMapNaviCameraInfo[] aMapNaviCameraInfos){
@@ -134,6 +192,7 @@ public class GaoDeEventManager {
         }
         if(null!=aMapServiceAreaInfo){
             GaoDeHudSendConfig.getInstance().getEventImp().sendAMapServiceAreaInfo(aMapServiceAreaInfo);
+            Log.i("kankanfuwuqu","kankanfuwuqu:"+aMapServiceAreaInfo);
         }
     }
 

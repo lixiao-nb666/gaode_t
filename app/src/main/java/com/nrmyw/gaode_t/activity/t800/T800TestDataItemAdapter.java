@@ -1,9 +1,7 @@
 package com.nrmyw.gaode_t.activity.t800;
 
 import android.content.Context;
-import android.text.Editable;
 import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,16 +11,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nrmyw.gaode_t.R;
 import com.nrmyw.hud_data_lib.bean.HudLaneCountBean;
 import com.nrmyw.hud_data_lib.bean.HudLaneHiPassCountBean;
 import com.nrmyw.hud_data_lib.type.lane.HudLaneType;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class T800TestDataItemAdapter extends RecyclerView.Adapter {
@@ -31,7 +25,9 @@ public class T800TestDataItemAdapter extends RecyclerView.Adapter {
     private T800TestDataType t800TestDataType;
     private int numb;
     private HudLaneType[] hudLaneTypes;
-    private Integer[] hudHipassLaneTypes;
+
+
+    private EditText[] editTexts;
 
     public T800TestDataItemAdapter(Context context,T800TestDataType t800TestDataType) {
         layoutInflater = LayoutInflater.from(context);
@@ -47,7 +43,8 @@ public class T800TestDataItemAdapter extends RecyclerView.Adapter {
                 hudLaneTypes=new HudLaneType[this.numb];
                 break;
             case LaneInformation_hi_pass_1:
-                hudHipassLaneTypes=new Integer[this.numb];
+                editTexts=new EditText[this.numb];
+
                 break;
         }
         notifyDataSetChanged();
@@ -74,9 +71,28 @@ public class T800TestDataItemAdapter extends RecyclerView.Adapter {
             return new HudLaneHiPassCountBean();
         }
         HudLaneHiPassCountBean hudLaneHiPassCountBean=new HudLaneHiPassCountBean();
-        for(Integer numb:hudHipassLaneTypes){
-            hudLaneHiPassCountBean.add(numb);
-        }
+        try {
+            for(EditText editText:editTexts){
+                int type;
+                String s="";
+                if(null==editText||null==editText.getText()){
+                    s="";
+                    type=-1;
+                }else {
+                    s=editText.getText().toString();
+                    if(TextUtils.isEmpty(s)){
+                        s="";
+                        type=-1;
+                    }else {
+                        type=Integer.valueOf(s.toString());
+                    }
+                }
+                hudLaneHiPassCountBean.add(type);
+
+
+
+            }
+        }catch (Exception e){}
         return hudLaneHiPassCountBean;
 
     }
@@ -123,27 +139,28 @@ public class T800TestDataItemAdapter extends RecyclerView.Adapter {
                 hudLaneTypes[nowP]=HudLaneType.values()[0];
                 break;
             case LaneInformation_hi_pass_1:
-                viewHodler.numb1ET.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        if(null==s|| TextUtils.isEmpty(s.toString())){
-                            hudHipassLaneTypes[nowP]=-1;
-                        }else {
-                            hudHipassLaneTypes[nowP]=Integer.valueOf(s.toString());
-                        }
-                    }
-                });
-                hudHipassLaneTypes[nowP]=-1;
+                editTexts[nowP]=viewHodler.numb1ET;
+//                viewHodler.numb1ET.addTextChangedListener(new TextWatcher() {
+//                    @Override
+//                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//                    }
+//
+//                    @Override
+//                    public void afterTextChanged(Editable s) {
+//                        if(null==s|| TextUtils.isEmpty(s.toString())){
+//                            hudHipassLaneTypes[nowP]=-1;
+//                        }else {
+//                            hudHipassLaneTypes[nowP]=Integer.valueOf(s.toString());
+//                        }
+//                    }
+//                });
+//                hudHipassLaneTypes[nowP]=-1;
                 break;
         }
 

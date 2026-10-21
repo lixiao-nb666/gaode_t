@@ -10,9 +10,13 @@ pluginManagement {
         maven {
             url = "https://devrepo.tmapadmin.com/repository/tmap-sdk-release/"
         }
-
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         google()
         mavenCentral()
+        flatDir {
+            dirs 'libs'
+        }
+
     }
 }
 dependencyResolutionManagement {
@@ -27,9 +31,13 @@ dependencyResolutionManagement {
         maven {
             url = "https://devrepo.tmapadmin.com/repository/tmap-sdk-release/"
         }
-
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         google()
         mavenCentral()
+        flatDir {
+            dirs 'libs'
+        }
+
     }
 }
 rootProject.name = "gaode_t"

@@ -1,8 +1,8 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="main_init_ble">
-        The authorization for all permissions has been confirmed\n
-        Click "Initialize" and search for the matching Bluetooth.</string>
+    <string name="app_name">HUD MyW</string>
+    <string name="request_permissions">request permissions</string>
+    <string name="main_init_ble">Init Ble</string>
     <string name="main_search_ble">Search for Bluetooth matching results</string>
     <string name="main_set_ble">Bluetooth Setting</string>
     <string name="main_send_ble_test_data">Send Ble test data</string>
@@ -16,6 +16,12 @@
     <string name="ble_set_sound">Sound</string>
     <string name="ble_set_device_sound">Device Sound</string>
     <string name="ble_set_gps_speed">GPS Speed Ratio Value</string>
+    <string name="ble_set_image_quality">Image Quality</string>
+    <string name="ble_set_progress_quality">Progress Quality</string>
+    <string name="ble_set_daylight_search">日光采集</string>
+    <string name="ble_set_image_size">Image Size</string>
+    <string name="ble_set_time_difference">Time Difference</string>
+    <string name="ble_set_pair_type">Pair Type</string>
 
     //T800Test-title
     <string name="t800_test_title_mq">Queue test</string>
@@ -94,6 +100,11 @@
         0x12:Display the yellow status bar\n
         0x13:Flashing turn indicator icon
     </string>
+    <string name="t800_test_title_display">Display rect：(0x74)</string>
+    <string name="t800_test_title_display_body">
+        0x74:Display rect
+
+    </string>
 
     //T800Test-item
     <string name="t800_test_item_mq_100">100 test instructions</string>
@@ -114,6 +125,8 @@
     <string name="t800_test_item_warning_point_2_b">warning point 2 body</string>
     <string name="t800_test_item_reachinfo_1">Send random time type</string>
     <string name="t800_test_item_reachinfo_2">Send reachinfo string</string>
+    <string name="t800_test_item_laneinformation_set_new_or_old">设置新旧车道信息</string>
+    <string name="t800_test_item_trun_type_set_new_or_old">设置新旧转向信息</string>
     <string name="t800_test_item_laneinformation_hide">Hidden driveway</string>
     <string name="t800_test_item_laneinformation_0">selective-access display</string>
     <string name="t800_test_item_laneinformation_1">1-10</string>
@@ -130,6 +143,8 @@
     <string name="t800_test_item_trun_type_1">Single random</string>
     <string name="t800_test_item_trun_type_2">Two random ones</string>
     <string name="t800_test_item_trun_type_3">Loop display</string>
+    <string name="t800_test_item_big_trun_type_show">Big trun type show</string>
+    <string name="t800_test_item_big_trun_type_hide">Big trun type hide</string>
     <string name="t800_test_item_next_road_name">Next lane: Test road name + random number</string>
     <string name="t800_test_item_now_road_hide">Current Lane: Hide Name</string>
     <string name="t800_test_item_now_road_name_1">Current Lane: Destination Name</string>
@@ -143,6 +158,7 @@
     <string name="t800_test_item_gps_speed_que">Query the GPS speed ratio value</string>
     <string name="t800_test_item_brightness_1">Set_Brightness_Auto</string>
     <string name="t800_test_item_brightness_2">Set_Brightness_to 1-10 randomly manually</string>
+    <string name="t800_test_item_luminance_percent">Set_LuminancePercent</string>
     <string name="t800_test_item_brightness_que">Query brightness</string>
     <string name="t800_test_item_brightness_daylight_statu_open">Sunlight collection has been activated</string>
     <string name="t800_test_item_brightness_daylight_statu_close">Sunlight collection is turned off</string>
@@ -150,6 +166,8 @@
     <string name="t800_test_item_sn_write">Rewrite SN: T700+ Random 6-digit alphanumeric characters</string>
     <string name="t800_test_item_que_device_version">Query the device version information</string>
     <string name="t800_test_item_factory_set">Restore factory settings</string>
+    <string name="t800_test_item_set_ble_name">Set Ble Data Name</string>
+    <string name="t800_test_item_set_tws_name">Set Ble Audio Name</string>
     <string name="t800_test_item_sound_set">Set random sound from 0 to 10</string>
     <string name="t800_test_item_sound_que">Query the volume level of the sound</string>
     <string name="t800_test_item_device_sound_open">Startup alert sound: ON</string>
@@ -163,13 +181,35 @@
     <string name="t800_test_item_image_show">Show Image</string>
     <string name="t800_test_item_image_hide">Hide Image</string>
     <string name="t800_test_item_bar_hide">Hide Bar</string>
-    <string name="t800_test_item_show_yellow_statu">Display the yellow status bar</string>
-    <string name="t800_test_item_hide_yellow_statu">Hide the yellow status bar</string>
+    <string name="t800_test_item_show_yellow_statu_2">显示2个警示图黄色状态栏</string>
+    <string name="t800_test_item_show_yellow_statu">显示头部黄色状态栏</string>
+
+
+    <string name="t800_test_item_hide_wp_yellow_statu" >隐藏警示图黄色状态栏</string>
+    <string name="t800_test_item_hide_title_yellow_statu" >隐藏头部黄色状态栏</string>
+    <string name="t800_test_item_hide_yellow_statu">隐藏全部黄色状态栏</string>
     <string name="t800_test_item_yellow_statu_str">yellow status str</string>
     <string name="t800_test_item_icon_flicker_open">The icon is flashing on</string>
     <string name="t800_test_item_icon_flicker_close">The icon is flashing off</string>
     <string name="t800_test_item_set_speeding_bj" >设置超速背景-循环</string>
     <string name="t800_test_item_set_trun_bj" >设置转向背景-循环</string>
     <string name="t800_test_item_set_yellow_statu_bj" >设置黄色状态栏背景-循环</string>
+    <string name="t800_test_item_set_display_rect_init" >init</string>
+    <string name="t800_test_item_set_display_rect_top_update" >top update</string>
+    <string name="t800_test_item_set_display_rect_bottom_update" >bottom update</string>
+    <string name="t800_test_item_set_display_notifiction_1" >显示一个提示框</string>
+    <string name="t800_test_item_set_display_notifiction_2" >显示二个提示框</string>
+    <string name="t800_test_item_set_display_notifiction_hide" >隐藏提示框</string>
+    <string name="t800_test_item_set_display_notifiction_icon" >提示框图标控制</string>
+    <string name="t800_test_item_set_factory_test" translatable="false">工厂测试</string>
 
+
+    <string name="t800_test_item_trun_msg_show" translatable="false" >转向通知显示</string>
+    <string name="t800_test_item_trun_msg_hide" translatable="false">转向通知隐藏</string>
+
+    <string name="t800_test_item_warning_point_pass_1" translatable="false">大小警示图显示PASS</string>
+    <string name="t800_test_item_warning_point_pass_2" translatable="false">大警示图显示PASS</string>
+    <string name="t800_test_item_warning_point_pass_3" translatable="false">小警示图显示PASS</string>
+    <string name="t800_test_item_warning_point_pass_4" translatable="false">区间限速显示PASS</string>
+    <string name="t800_test_item_warning_point_pass_hide" translatable="false">隐藏PASS</string>
 </resources>

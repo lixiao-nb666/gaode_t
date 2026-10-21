@@ -8,8 +8,6 @@ import com.nrmyw.hud.bean.spped.HudSpeedBean;
 import com.nrmyw.hud.bean.time.HudTimeBean;
 import com.nrmyw.hud.bean.turn.HudTurnBean;
 import com.nrmyw.hud.bean.warningpoint.HudWarningPointBean;
-import com.nrmyw.hud_data_lib.type.turn.HudTurnBjType;
-import com.nrmyw.hud_data_lib.type.warningproint.HudWarningPointType;
 
 import java.io.Serializable;
 

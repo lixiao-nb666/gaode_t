@@ -19,3 +19,37 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+
+# Gson
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.stream.** { *; }
+
+#okhttp3
+-dontwarn com.squareup.okhttp3.**
+-keep class com.squareup.okhttp3.** { *;}
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn javax.annotation.**
+-dontwarn org.conscrypt.**
+
+#lifecycle
+-keep public class android.arch.lifecycle.** {
+    public protected *;
+}
+-keepclassmembers class ** {
+    @android.arch.lifecycle.OnLifecycleEvent public *;
+}
+
+#kotlin
+-dontwarn kotlin.**
+
+#AsrSdk
+-keep class com.youdao.ydasr.** { *; }
+-keep interface com.youdao.ydasr.** { *; }
+-keep class com.youdao.audio.** { *; }
+-keep interface com.youdao.audio.** { *; }
+
+

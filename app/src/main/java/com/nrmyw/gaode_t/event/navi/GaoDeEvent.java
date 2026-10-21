@@ -3,7 +3,6 @@ package com.nrmyw.gaode_t.event.navi;
 import android.text.TextUtils;
 
 import com.amap.api.navi.model.AMapNotAvoidInfo;
-
 import com.nrmyw.gaode_t.event.GaoDeNaviEventImp;
 import com.nrmyw.gaode_t.event.t800.GaoDeT800Event;
 import com.nrmyw.gaode_t.type.NaviSdkAvoidForbidType;

@@ -8,11 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="NotTitleAppTheme" parent="@android:style/Theme.Light.NoTitleBar">
+    <style name="NotTitleAppTheme" parent="NewBee.BaseImmersiveTheme">
 
         <!-- Customize your theme here. -->
         <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
-        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowFullscreen">true</item>
         <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent</item>
         <!--状态栏沉浸式-->
         <item name="android:windowTranslucentStatus">true</item>
@@ -20,8 +20,43 @@
         <item name="android:windowTranslucentNavigation">false</item>
 
 
+    </style>
+
+
+    <style name="NotTitleAppThemeTransparentNavigation" parent="NewBee.BaseImmersiveThemeTransparentNavigation">
+
+        <!-- Customize your theme here. -->
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent</item>
+        <!--状态栏沉浸式-->
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--底部导航栏不沉浸式-->
+        <item name="android:windowTranslucentNavigation">true</item>
 
 
     </style>
+
+
+    <style name="HudAppTheme" parent="NotTitleAppTheme">
+        <item name="android:windowBackground">@drawable/hud_app_bj_1</item>
+
+
+
+
+    </style>
+
+
+    <style name="HudWelcomePageTheme" parent="NotTitleAppThemeTransparentNavigation">
+        <item name="android:windowBackground">@drawable/hud_app_bj_1</item>
+
+
+
+
+    </style>
+
+
+
+
 
 </resources>

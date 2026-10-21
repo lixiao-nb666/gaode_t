@@ -14,4 +14,10 @@
 
     <color name="gray_black">#88000000</color>
     <color name="soft_black">#cc000000</color>
+
+    <color name="ble_button_select_false">#3D5BAF</color>
+    <color name="ble_text_color">#e6ebe9</color>
+    <color name="set_line_color">#707070</color>
+    <color name="set_text_color">#5C6060</color>
+
 </resources>

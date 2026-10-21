@@ -1,4 +1,4 @@
-//package com.edc;
+package com.edc;//package com.edc;
 //
 //import android.os.Bundle;
 //

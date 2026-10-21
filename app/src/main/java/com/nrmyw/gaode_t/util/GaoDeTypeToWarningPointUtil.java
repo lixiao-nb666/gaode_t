@@ -5,7 +5,6 @@ import android.util.Log;
 
 import com.nrmyw.gaode_t.bean.HudCameraBean;
 import com.nrmyw.gaode_t.type.NaviSdkAvoidType;
-import com.nrmyw.gaode_t.type.NaviSdkCamera;
 import com.nrmyw.hud_data_lib.type.warningproint.HudWarningPointType;
 
 public class GaoDeTypeToWarningPointUtil {
@@ -46,7 +45,7 @@ public class GaoDeTypeToWarningPointUtil {
 
 
                 case EMERGENCY://应急车道拍照
-                    return HudWarningPointType.numb_10;
+                        return HudWarningPointType.c_60;
                 case BUSWAY://公交专用道摄像头
                     return HudWarningPointType.numb_9;
                 default:

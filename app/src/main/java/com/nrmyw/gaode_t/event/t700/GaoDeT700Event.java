@@ -185,7 +185,7 @@ public class GaoDeT700Event implements GaoDeNaviEventImp {
     }
 
     @Override
-    public void deviceSetePromptToneStatu(boolean isOpen) {
+    public void deviceSetPromptToneStatu(boolean isOpen) {
 
     }
 

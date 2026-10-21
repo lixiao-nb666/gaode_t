@@ -1,6 +1,7 @@
 <resources>
-
-    <string name="main_init_ble">모든 권한이 있는지 확인하려면 초기화를 클릭하고 블루투스로 검색하십시오</string>
+    <string name="app_name">HUD Map</string>
+    <string name="request_permissions">request permissions</string>
+    <string name="main_init_ble">Init Ble</string>
     <string name="main_search_ble">블루투스로 일치하는 검색</string>
     <string name="main_set_ble">블루투스 설정</string>
     <string name="main_send_ble_test_data">테스트 데이터 보내기</string>
@@ -12,8 +13,14 @@
     <string name="ble_set_version">버전 정보</string>
     <string name="ble_set_brightness">광도</string>
     <string name="ble_set_sound">소리</string>
+    <string name="ble_set_daylight_search">日光采集</string>
     <string name="ble_set_device_sound">신호음</string>
     <string name="ble_set_gps_speed">GPS속도 비율</string>
+    <string name="ble_set_image_quality">Image Quality</string>
+    <string name="ble_set_progress_quality">Progress Quality</string>
+    <string name="ble_set_image_size">Image Size</string>
+    <string name="ble_set_time_difference">Time Difference</string>
+    <string name="ble_set_pair_type">Pair Type</string>
 
     //T800Test-title
     <string name="t800_test_title_mq">큐 테스트</string>
@@ -84,7 +91,12 @@
         0x12:노란색 상태 표시줄 보이기\n
         0x13:깜빡이는 방향 바꾸기 아이콘
     </string>
+    <string name="t800_test_title_display">Display rect：(0x74)</string>
+    <string name="t800_test_title_display_body">
+        0x74:Display rect
 
+    </string>
+    <string name="t800_test_item_luminance_percent">Set_LuminancePercent</string>
 
     //T800Test-item
     <string name="t800_test_item_mq_100">100개의 테스트 명령어</string>
@@ -118,9 +130,13 @@
     <string name="t800_test_item_laneinformation_hi_pass_auto_l">자동 길이 설정</string>
     <string name="t800_test_item_laneinformation_hi_pass_1">무작위로 보이기</string>
     <string name="t800_test_item_laneinformation_hi_pass_2">30차선 보이기</string>
+    <string name="t800_test_item_laneinformation_set_new_or_old">设置新旧车道信息</string>
+    <string name="t800_test_item_trun_type_set_new_or_old">设置新旧转向信息</string>
     <string name="t800_test_item_trun_type_1">단일 무작위</string>
     <string name="t800_test_item_trun_type_2">무작위 2개</string>
     <string name="t800_test_item_trun_type_3">반복 표시</string>
+    <string name="t800_test_item_big_trun_type_show">Big trun type show</string>
+    <string name="t800_test_item_big_trun_type_hide">Big trun type hide</string>
     <string name="t800_test_item_next_road_name">다음 차선:도로명 + 난수 테스트</string>
     <string name="t800_test_item_now_road_hide">현재 주행 경로:이름을 숨깁니다</string>
     <string name="t800_test_item_now_road_name_1">현재 이동 경로:목적지 이름</string>
@@ -142,6 +158,8 @@
     <string name="t800_test_item_sn_write">sn:t700 + 임의의 6자리 영문자 다시 쓰기</string>
     <string name="t800_test_item_que_device_version">장치 버전 정보를 찾다</string>
     <string name="t800_test_item_factory_set">공장 설정 복원</string>
+    <string name="t800_test_item_set_ble_name">Set Ble Data Name</string>
+    <string name="t800_test_item_set_tws_name">Set Ble Audio Name</string>
     <string name="t800_test_item_sound_set">무작위 사운드 0-10 설정</string>
     <string name="t800_test_item_sound_que">소리 크기 검색</string>
     <string name="t800_test_item_device_sound_open">시작 신호음:켜기</string>
@@ -155,12 +173,26 @@
     <string name="t800_test_item_image_show">실경도를 나타내다</string>
     <string name="t800_test_item_image_hide">실경도를 숨기다</string>
     <string name="t800_test_item_bar_hide">Hide Bar</string>
-    <string name="t800_test_item_show_yellow_statu">노란색 상태 표시줄 보이기</string>
-    <string name="t800_test_item_hide_yellow_statu">노란색 상태 표시줄 숨기기</string>
+    <string name="t800_test_item_show_yellow_statu_2">显示2个警示图黄色状态栏</string>
+    <string name="t800_test_item_show_yellow_statu">显示头部黄色状态栏</string>
+    <string name="t800_test_item_hide_wp_yellow_statu" >隐藏警示图黄色状态栏</string>
+    <string name="t800_test_item_hide_title_yellow_statu" >隐藏头部黄色状态栏</string>
+    <string name="t800_test_item_hide_yellow_statu">隐藏全部黄色状态栏</string>
+
+
+
     <string name="t800_test_item_yellow_statu_str">yellow status str</string>
+
     <string name="t800_test_item_icon_flicker_open">아이콘 깜박임</string>
     <string name="t800_test_item_icon_flicker_close">아이콘 깜빡임 끄기</string>
     <string name="t800_test_item_set_speeding_bj" >设置超速背景-循环</string>
     <string name="t800_test_item_set_trun_bj" >设置转向背景-循环</string>
     <string name="t800_test_item_set_yellow_statu_bj" >设置黄色状态栏背景-循环</string>
+    <string name="t800_test_item_set_display_rect_init" >init</string>
+    <string name="t800_test_item_set_display_rect_top_update" >top update</string>
+    <string name="t800_test_item_set_display_rect_bottom_update" >bottom update</string>
+    <string name="t800_test_item_set_display_notifiction_1" >显示一个提示框</string>
+    <string name="t800_test_item_set_display_notifiction_2" >显示二个提示框</string>
+    <string name="t800_test_item_set_display_notifiction_hide" >隐藏提示框</string>
+    <string name="t800_test_item_set_display_notifiction_icon" >提示框图标控制</string>
 </resources>

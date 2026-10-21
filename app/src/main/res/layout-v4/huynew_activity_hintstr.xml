@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+                android:orientation="vertical"
+              >
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:textColor="@color/gray_black"
+            android:textSize="60dp"
+            android:text="提词设置"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_hn_hintstr"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center"
+            android:text="深圳市MyW软件团队"
+            android:textColor="@color/text_translation_over_color"
+            android:textSize="33dp"/>
+
+</LinearLayout>

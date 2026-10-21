@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/ll_statu_connect"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+
+<include layout="@layout/huynew_connect_page_title"/>
+    <TextView
+        android:id="@+id/tv_show_cmd"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:textSize="22dp"
+        android:textColor="@color/text_translation_over_color"/>
+
+<include layout="@layout/huynew_ar_demo_page" />
+
+<include layout="@layout/huynew_connect_page_key_control"/>
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rv_connect_page"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:layout_marginLeft="35dp"
+    android:layout_marginRight="35dp"
+
+    />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:gravity="center"
+        android:text="深圳市MyW软件团队"
+        android:textColor="@color/text_translation_over_color"
+        android:textSize="33dp"/>
+</LinearLayout>

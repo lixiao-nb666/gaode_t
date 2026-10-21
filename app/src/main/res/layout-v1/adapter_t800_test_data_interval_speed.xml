@@ -22,68 +22,68 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="s1"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
 
         <EditText
             android:id="@+id/et_numb1"
-            android:layout_width="100px"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
         <TextView
             android:id="@+id/tv_numb2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="dis"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
 
         <EditText
             android:id="@+id/et_numb2"
-            android:layout_width="200px"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
         <TextView
             android:id="@+id/tv_numb3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="s2"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
 
         <EditText
             android:id="@+id/et_numb3"
-            android:layout_width="100px"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/tv_numb4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="H"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
 
         <EditText
             android:id="@+id/et_numb4"
-            android:layout_width="100px"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/tv_numb5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="M"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
 
         <EditText
             android:id="@+id/et_numb5"
-            android:layout_width="100px"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
 
 
     </LinearLayout>

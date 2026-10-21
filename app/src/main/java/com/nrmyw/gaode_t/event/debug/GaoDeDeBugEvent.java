@@ -205,7 +205,7 @@ public class GaoDeDeBugEvent implements GaoDeNaviEventImp {
     }
 
     @Override
-    public void deviceSetePromptToneStatu(boolean isOpen) {
+    public void deviceSetPromptToneStatu(boolean isOpen) {
 
     }
 

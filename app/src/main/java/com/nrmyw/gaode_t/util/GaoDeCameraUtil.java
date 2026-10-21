@@ -3,10 +3,9 @@ package com.nrmyw.gaode_t.util;
 import android.util.ArrayMap;
 import android.util.Log;
 
+import com.amap.api.navi.enums.CameraType;
 import com.amap.api.navi.model.AMapNaviCameraInfo;
-import com.nrmyw.gaode_t.R;
 import com.nrmyw.gaode_t.bean.HudCameraBean;
-import com.nrmyw.gaode_t.log.LG;
 import com.nrmyw.gaode_t.type.NaviSdkCamera;
 
 import java.util.ArrayList;
@@ -54,6 +53,7 @@ public class GaoDeCameraUtil {
                 }
                 hudCameraBean=new HudCameraBean();
                 hudCameraBean.setDis(dis);
+
             }
             hudCameraBean.setSpeed(speed);
             hudCameraBean.add(nowCamera);

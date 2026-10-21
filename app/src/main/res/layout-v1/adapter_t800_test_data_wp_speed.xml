@@ -23,27 +23,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="speed1"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
 
         <EditText
             android:id="@+id/et_numb2"
-            android:layout_width="100px"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
         <TextView
             android:id="@+id/tv_numb3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="speed2"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
 
         <EditText
             android:id="@+id/et_numb3"
-            android:layout_width="100px"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:textSize="40px"/>
+            android:textSize="20dp"/>
 
     </LinearLayout>
 

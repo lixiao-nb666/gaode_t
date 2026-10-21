@@ -6,35 +6,34 @@
   >
 
     <RelativeLayout
+        android:id="@+id/rl_progress"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-
-
+        android:background="@color/black"
         >
 
         <com.gaode.demo.activity.custom.view.TmcBarView
             android:id="@+id/navi_sdk_apiTmcBarView"
-            android:layout_width="18px"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="24px"
-            android:layout_marginTop="3px"
+
             />
 
         <View
             android:id="@+id/navi_sdk_tmc_bar_container"
-            android:layout_width="22px"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="22px"
+            android:visibility="gone"
             android:background="@drawable/lbs_navi_tmcbar_bg" />
 
         <ImageView
             android:id="@+id/navi_sdk_apiTmcBarCar"
-            android:layout_width="22px"
-            android:layout_height="22px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_gravity="right"
+            android:layout_gravity="center_horizontal"
             android:src="@drawable/lbs_navi_tmcbar_cursor" />
     </RelativeLayout>
 

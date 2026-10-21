@@ -1,4 +1,4 @@
-//package com.nrmyw.gaode_t.type;
+package com.nrmyw.gaode_t.type;//package com.nrmyw.gaode_t.type;
 //
 //
 //import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
